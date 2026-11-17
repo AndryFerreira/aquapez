@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de población de acuario | AquaPez</title>
+<meta name="description" content="Calcula cuántos peces caben en tu acuario: introduce los litros, añade especies y revisa la carga estimada, los grupos mínimos y las incompatibilidades.">
+<link rel="canonical" href="https://aquapez.com/herramientas/calculadora-de-poblacion/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AquaPez">
+<meta property="og:title" content="Calculadora de población de acuario">
+<meta property="og:description" content="Introduce los litros de tu acuario, añade las especies que quieres y revisa si la carga, los grupos mínimos y la compatibilidad encajan.">
+<meta property="og:url" content="https://aquapez.com/herramientas/calculadora-de-poblacion/">
+<meta property="og:image" content="https://aquapez.com/assets/img/portada-hero.webp">
+<meta property="og:locale" content="es_LA">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="google-adsense-account" content="ca-pub-7296411361391725">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7296411361391725"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/style.css?v=6">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de población de acuario",
+  "description": "Calcula cuántos peces caben en tu acuario: introduce los litros, añade especies y revisa la carga estimada, los grupos mínimos y las incompatibilidades.",
+  "url": "https://aquapez.com/herramientas/calculadora-de-poblacion/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "es",
+  "offers": {"@type": "Offer", "price": 0, "priceCurrency": "USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aquapez.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Herramientas"},
+    {"@type": "ListItem", "position": 3, "name": "Calculadora de población de acuario", "item": "https://aquapez.com/herramientas/calculadora-de-poblacion/"}
+  ]
+}
+</script>
+<style>
+.calc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.6rem; margin: 1.5rem 0; }
+.calc h2 { margin-top: 0; }
+.calc-grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+@media (min-width: 720px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
+.calc label { display: block; font-family: var(--font-head); font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
+.calc input[type="number"], .calc select { width: 100%; padding: 0.65rem 0.8rem; border: 1.5px solid var(--border); border-radius: 12px; font-family: var(--font-head); font-size: 1rem; color: var(--ink); background: #fff; }
+.calc input[type="number"]:focus, .calc select:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+.calc-hint { font-size: 0.9rem; color: var(--ink-soft); margin: 0.35rem 0 0; }
+.calc-add { display: flex; gap: 0.6rem; align-items: flex-end; flex-wrap: wrap; }
+.calc-add .grow { flex: 1 1 12rem; }
+.calc-list { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+.calc-list th, .calc-list td { padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
+.calc-list th { font-family: var(--font-head); font-size: 0.85rem; color: var(--ink-soft); }
+.calc-list .num { text-align: right; }
+.calc-list .qty { display: inline-flex; align-items: center; gap: 0.35rem; }
+.qty-btn { width: 1.9rem; height: 1.9rem; border-radius: 50%; border: 1.5px solid var(--primary); background: #fff; color: var(--primary-dark); font-weight: 800; font-size: 1rem; line-height: 1; cursor: pointer; font-family: var(--font-head); }
+.qty-btn:hover { background: var(--aqua-mist); }
+.qty-btn.remove { border-color: var(--coral); color: var(--coral); }
+.calc-empty { color: var(--ink-soft); margin: 0.5rem 0 0; }
+.calc-result { margin-top: 1.4rem; border-top: 2px solid var(--border); padding-top: 1.2rem; }
+.calc-meter { height: 1rem; background: var(--aqua-mist); border-radius: var(--pill); overflow: hidden; margin: 0.5rem 0 0.4rem; }
+.calc-meter-fill { height: 100%; width: 0%; background: var(--sea-green); border-radius: var(--pill); transition: width 0.3s ease; }
+.calc-verdict { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; margin: 0.4rem 0; }
+.calc-verdict.ok { color: var(--sea-green); }
+.calc-verdict.limit { color: var(--primary-dark); }
+.calc-verdict.over { color: var(--coral); }
+.calc-summary { margin: 0.3rem 0; color: var(--ink-soft); }
+.calc-warnings { list-style: none; padding: 0; margin: 0.8rem 0 0; display: grid; gap: 0.55rem; }
+.calc-warnings li { border-radius: 12px; padding: 0.7rem 0.9rem; font-size: 1rem; line-height: 1.55; }
+.calc-warnings .w-error { background: #FBE9E4; border-left: 4px solid var(--coral-dark); }
+.calc-warnings .w-attention { background: #FDF3E3; border-left: 4px solid #C77E1F; }
+.calc-warnings .w-info { background: var(--aqua-mist); border-left: 4px solid var(--primary); }
+.calc-warnings .w-ok { background: #E4F4EF; border-left: 4px solid var(--sea-green); }
+.calc-warnings strong { font-family: var(--font-head); }
+.callout { border-radius: var(--radius); padding: 1.1rem 1.3rem; margin: 1.5rem 0; background: #FDF3E3; border: 1.5px solid #E8C88A; }
+.callout strong { font-family: var(--font-head); color: var(--ink); }
+.callout p { margin: 0.3rem 0 0; }
+.tool-media { background: var(--deep); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; min-height: 10rem; margin: 1.5rem 0; }
+.tool-media svg { width: 72px; height: 72px; opacity: 0.95; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/" aria-label="AquaPez — inicio">
+        <svg class="logo-mark" viewBox="0 0 48 48" width="38" height="38" aria-hidden="true"><circle cx="24" cy="24" r="22.5" fill="#D9EFF5"/><path d="M12 24c4.5-5.5 11-8.5 17-8.5 3.5 0 6.8 1.2 9.5 3.2L35 24l3.5 5.3c-2.7 2-6 3.2-9.5 3.2-6 0-12.5-3-17-8.5z" fill="#0A2C3D"/><path d="M12 24L4.5 18.5v11L12 24z" fill="#0A2C3D"/><circle cx="32.5" cy="21.5" r="1.8" fill="#D9EFF5"/><circle cx="41" cy="12" r="2" fill="#0077B6"/><circle cx="44" cy="6.5" r="1.3" fill="#0077B6"/></svg>
+        <span class="logo-word">Aqua<em>Pez</em></span>
+      </a>
+    <nav id="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/" aria-current="page">Inicio</a></li>
+        <li><a href="/peces/">Peces</a></li>
+        <li><a href="/plantas/">Plantas</a></li>
+        <li><a href="/montaje/">Montaje</a></li>
+        <li><a href="/equipos/">Equipos</a></li>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="search-link" href="/buscar/" aria-label="Buscar en el sitio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        Buscar
+      </a>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: header | Ver ADSENSE.md. No pegar sin cuenta aprobada. -->
+<div class="ad-slot" data-ad-slot="header" aria-hidden="true"></div>
+
+<main class="container">
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="/">Inicio</a> &rsaquo; <span>Herramientas</span> &rsaquo; <span aria-current="page">Calculadora de población de acuario</span>
+  </nav>
+
+  <article>
+    <h1>Calculadora de población de acuario</h1>
+    <p class="article-meta">
+      Por <a href="/nosotros/">Equipo AquaPez</a> &middot;
+      <time datetime="2026-11-16">16 de noviembre de 2026</time> &middot;
+      Categoría: Herramientas
+    </p>
+
+    <p class="lead">¿Cuántos peces caben en tu acuario? Introduce los litros, añade las especies que quieres mantener y la calculadora estima la carga total, revisa si cada grupo alcanza su mínimo, si alguna especie necesita más litros y si hay incompatibilidades claras entre las elegidas.</p>
+
+    <div class="callout" role="note">
+      <p><strong>Estimación orientativa, no una regla exacta.</strong> Esta calculadora usa como referencia aproximada la regla de 1&nbsp;cm de pez adulto por litro, junto con los litros mínimos, los grupos mínimos y el temperamento de cada especie según las guías de AquaPez. La carga real también depende de la filtración, el plantado, la alimentación y el mantenimiento. Ante la duda, deja margen y consulta la guía completa de cada especie antes de comprar.</p>
+    </div>
+
+    <section class="calc" aria-labelledby="calc-title">
+      <h2 id="calc-title">Tu acuario</h2>
+      <div class="calc-grid">
+        <div>
+          <label for="liters">Litros del acuario</label>
+          <input type="number" id="liters" min="10" max="2000" step="1" value="60" inputmode="numeric" aria-describedby="liters-hint">
+          <p class="calc-hint" id="liters-hint">Litros reales de agua, no el volumen nominal del fabricante si lo conoces.</p>
+        </div>
+        <div>
+          <label for="species-select">Añadir especie</label>
+          <div class="calc-add">
+            <div class="grow">
+              <select id="species-select" aria-label="Especie a añadir"></select>
+            </div>
+            <div>
+              <label for="species-count" class="visually-hidden">Cantidad</label>
+              <input type="number" id="species-count" min="1" max="200" step="1" value="6" inputmode="numeric" aria-label="Cantidad de ejemplares" style="width:5.5rem">
+            </div>
+            <button class="btn" type="button" id="add-species">Añadir</button>
+          </div>
+          <p class="calc-hint">El tamaño usado es el del pez adulto, no el de la tienda.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:1.4rem">Especies en tu acuario</h3>
+      <p class="calc-empty" id="empty-list">Todavía no has añadido ninguna especie. Elige una de la lista y pulsa «Añadir».</p>
+      <div class="table-wrap" id="list-wrap" hidden>
+        <table class="calc-list">
+          <thead>
+            <tr><th>Especie</th><th class="num">Ejemplares</th><th class="num">cm adulto</th><th class="num">Carga (cm)</th><th></th></tr>
+          </thead>
+          <tbody id="species-list"></tbody>
+        </table>
+      </div>
+
+      <div class="calc-result" id="result" aria-live="polite">
+        <h3>Resultado</h3>
+        <div class="calc-meter" aria-hidden="true"><div class="calc-meter-fill" id="meter-fill"></div></div>
+        <p class="calc-verdict" id="verdict">Añade especies para ver el resultado.</p>
+        <p class="calc-summary" id="summary"></p>
+        <ul class="calc-warnings" id="warnings"></ul>
+      </div>
+    </section>
+
+    <h2>Cómo se calcula</h2>
+    <p>La calculadora suma los centímetros de pez adulto de todas las especies añadidas y los compara con los litros del acuario, usando como referencia aproximada <strong>1&nbsp;cm de pez adulto por litro</strong>. Es una regla orientativa clásica: útil para detectar sobrepoblación evidente, pero no tiene en cuenta la forma del cuerpo, la actividad de cada especie, la filtración ni el plantado. Por eso el resultado se acompaña siempre de los otros tres controles: litros mínimos por especie, grupo mínimo y compatibilidad.</p>
+    <p>Las gambas cherry no se suman a los centímetros totales: su carga biológica es muy baja comparada con la de un pez, así que su límite lo marcan el volumen mínimo (20 litros) y el tamaño del grupo (10 o más), no la regla de 1&nbsp;cm por litro. Los vivíparos (guppy, molly y platy) se reproducen con facilidad: si mezclas machos y hembras, deja margen para las crías.</p>
+    <p>Ejemplo: un acuario de 60 litros con 10 neones tetra adultos de 4&nbsp;cm suma 40&nbsp;cm de carga, es decir, el 67&nbsp;% de la referencia orientativa (40&nbsp;÷&nbsp;60&nbsp;=&nbsp;0,67). El cardumen además cumple su mínimo de 10 ejemplares y el acuario alcanza los 60 litros mínimos del neón.</p>
+
+    <h2>Datos usados por la calculadora</h2>
+    <p>Todos los valores proceden de las guías de cada especie publicadas en AquaPez. Cuando un dato es un rango, se usa el extremo conservador (el tamaño adulto mayor y el grupo mínimo más alto del rango).</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Especie</th><th>Tamaño adulto</th><th>Litros mínimos</th><th>Grupo mínimo</th><th>Temperamento</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/articulos/pez-guppy-guia-completa/">Guppy</a></td><td>6 cm *</td><td>40 L</td><td>6</td><td>Pacífico y sociable</td></tr>
+          <tr><td><a href="/articulos/pez-betta-guia-completa/">Betta (macho)</a></td><td>6 cm *</td><td>20 L</td><td>1 (solo)</td><td>Territorial</td></tr>
+          <tr><td><a href="/articulos/neon-tetra-guia-completa/">Neón tetra</a></td><td>4 cm</td><td>60 L</td><td>10</td><td>Pacífico, de cardumen</td></tr>
+          <tr><td><a href="/articulos/corydora-guia-completa/">Corydora</a></td><td>7 cm *</td><td>60 L</td><td>6</td><td>Pacífica y gregaria</td></tr>
+          <tr><td><a href="/articulos/pez-molly-guia-completa/">Molly</a></td><td>12 cm *</td><td>80 L</td><td>5</td><td>Pacífico y activo</td></tr>
+          <tr><td><a href="/articulos/pez-platy-guia-completa/">Platy</a></td><td>7 cm *</td><td>60 L</td><td>6</td><td>Pacífico</td></tr>
+          <tr><td><a href="/articulos/ramirezi-guia-completa/">Ramirezi</a></td><td>7 cm *</td><td>80 L</td><td>2 (pareja)</td><td>Pacífico, territorial en reproducción</td></tr>
+          <tr><td><a href="/articulos/pez-disco-guia-completa/">Pez disco</a></td><td>20 cm *</td><td>250 L</td><td>5</td><td>Pacífico y gregario</td></tr>
+          <tr><td><a href="/articulos/pez-escalar-guia-completa/">Pez escalar</a></td><td>15 cm †</td><td>150 L</td><td>5</td><td>Pacífico; territorial cuando forma pareja</td></tr>
+          <tr><td><a href="/articulos/killifish-guia-completa/">Killifish</a></td><td>6 cm *</td><td>20 L</td><td>2 (pareja)</td><td>Pacífico; machos territoriales entre ellos</td></tr>
+          <tr><td><a href="/articulos/otocinclus-guia-completa/">Otocinclus</a></td><td>5 cm *</td><td>60 L</td><td>6</td><td>Totalmente pacífico y gregario</td></tr>
+          <tr><td><a href="/articulos/gamba-cherry-guia-completa/">Gamba cherry</a></td><td>3 cm *</td><td>20 L</td><td>10</td><td>Totalmente pacífica y sociable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="form-note">* Extremo conservador del rango de tamaño adulto indicado en la guía de la especie (guppy 3–6 cm, molly 8–12 cm, platy 5–7 cm, ramirezi 6–7 cm, disco 15–20 cm, otocinclus 4–5 cm, killifish 3–8 cm según la especie). El tamaño adulto del betta (6 cm), la corydora (7 cm) y la gamba cherry (3 cm) no aparece en su guía en AquaPez y corresponde al valor habitual de referencia para la especie, tomado en su extremo conservador. † El escalar adulto mide 15 cm de alto contando las aletas; se usa esa cifra como valor conservador porque la guía no indica la longitud corporal.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿La regla de 1 cm por litro es fiable?</h3>
+    <p>Es solo una aproximación para orientarse. Un pez alargado y tranquilo no carga el acuario igual que uno alto y activo del mismo tamaño, y un acuario bien filtrado y plantado aguanta más carga que uno pelado con un filtro justo. Úsala para descartar combinaciones claramente excesivas, no como un permiso exacto.</p>
+    <h3>¿Por qué la calculadora avisa si el grupo es pequeño?</h3>
+    <p>Los peces de cardumen y gregarios (neón, corydora, otocinclus, disco, gamba cherry) necesitan un número mínimo de compañeros para sentirse seguros, mostrar su comportamiento natural y no estresarse. Un grupo por debajo del mínimo es un problema aunque los litros sobren.</p>
+    <h3>¿Puedo meter un betta macho con otros peces?</h3>
+    <p>Solo un macho betta por acuario: dos machos pelearán hasta causarse daños graves. Con otros peces depende del carácter del betta y de la especie: las colas largas de los guppys macho, las gambas cherry y los peces pequeños y lentos son las combinaciones de mayor riesgo. La calculadora marca las más problemáticas.</p>
+
+    <h2>Guías relacionadas</h2>
+    <p>Para armar la combinación con criterio, lee la <a href="/articulos/peces-acuario-comunitario/">guía de peces para acuario comunitario</a> y la <a href="/articulos/compatibilidad-pez-guppy/">guía de compatibilidad del pez guppy</a>. Y antes de meter ningún pez, asegúrate de que el acuario está ciclado: la <a href="/articulos/ciclado-acuario-guia-completa/">guía completa de ciclado</a> explica el proceso paso a paso.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <p class="footer-brand">AquaPez</p>
+      <p>Acuarios plantados y peces tropicales: guías completas.</p>
+      <button id="open-cookie-settings" type="button">Preferencias de cookies</button>
+    </div>
+    <nav aria-label="Explorar">
+      <h2>Explorar</h2>
+      <ul>
+        <li><a href="/peces/">Peces</a></li>
+        <li><a href="/plantas/">Plantas</a></li>
+        <li><a href="/montaje/">Montaje</a></li>
+        <li><a href="/equipos/">Equipos</a></li>
+        <li><a href="/archivo/">Archivo</a></li>
+        <li><a href="/buscar/">Buscar</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Legal">
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="/privacidad/">Política de privacidad</a></li>
+        <li><a href="/cookies/">Política de cookies</a></li>
+        <li><a href="/terminos/">Términos de uso</a></li>
+        <li><a href="/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/derechos-de-autor/">Derechos de autor</a></li>
+        <li><a href="/creditos/">Créditos de imágenes</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <p class="footer-legal">© <span data-year>2026</span> AquaPez · Acuarios plantados y peces tropicales</p>
+  </div>
+</footer>
+
+<div id="cookie-banner" hidden role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <div class="container">
+    <p>Usamos cookies para mejorar tu experiencia y, con tu permiso, para analítica y publicidad. <a href="/cookies/">Lee nuestra política de cookies</a>.</p>
+    <div class="cookie-buttons">
+      <button type="button" class="cookie-accept">Aceptar</button>
+      <button type="button" class="cookie-reject">Rechazar</button>
+      <button type="button" class="cookie-config">Configurar</button>
+    </div>
+  </div>
+</div>
+
+<dialog id="cookie-modal" aria-labelledby="cookie-modal-title">
+  <div class="cookie-modal-inner">
+    <h2 id="cookie-modal-title">Preferencias de cookies</h2>
+    <p>Elige qué cookies permites. Las necesarias siempre están activas porque el sitio no funciona sin ellas.</p>
+    <div class="cookie-category">
+      <div><strong>Necesarias</strong><p class="cookie-desc">Imprescindibles para el funcionamiento básico del sitio.</p></div>
+      <input type="checkbox" checked disabled aria-label="Cookies necesarias, siempre activas">
+    </div>
+    <div class="cookie-category">
+      <div><strong>Preferencias</strong><p class="cookie-desc">Recuerdan tus ajustes, como el idioma o tus elecciones.</p></div>
+      <input type="checkbox" name="cc-preferences" aria-label="Cookies de preferencias">
+    </div>
+    <div class="cookie-category">
+      <div><strong>Analítica</strong><p class="cookie-desc">Nos ayudan a entender cómo se usa el sitio para mejorarlo.</p></div>
+      <input type="checkbox" name="cc-analytics" aria-label="Cookies de analítica">
+    </div>
+    <div class="cookie-category">
+      <div><strong>Publicidad</strong><p class="cookie-desc">Permiten mostrar anuncios relevantes y medir su rendimiento.</p></div>
+      <input type="checkbox" name="cc-advertising" aria-label="Cookies de publicidad">
+    </div>
+    <div class="cookie-buttons" style="margin-top:1.25rem">
+      <button type="button" class="cookie-accept cookie-save">Guardar preferencias</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="/assets/js/main.js?v=2" defer></script>
+<script src="/assets/js/consent.js?v=2" defer></script>
+</body>
+</html>
+
+<script>
+'use strict';
+/* Datos de las especies: valores tomados de las guías de AquaPez.
+   cm = tamaño adulto en el extremo conservador del rango de la guía.
+   countInCm = false solo para la gamba cherry (carga biológica muy baja). */
+var SPECIES = [
+  { id: 'guppy',      name: 'Guppy',       cm: 6,  minLiters: 40,  minGroup: 6,  temperament: 'Pacífico y sociable', countInCm: true },
+  { id: 'betta',      name: 'Betta (macho)', cm: 6, minLiters: 20, minGroup: 1, temperament: 'Territorial', countInCm: true },
+  { id: 'neon',       name: 'Neón tetra',  cm: 4,  minLiters: 60,  minGroup: 10, temperament: 'Pacífico, de cardumen', countInCm: true },
+  { id: 'corydora',   name: 'Corydora',    cm: 7,  minLiters: 60,  minGroup: 6,  temperament: 'Pacífica y gregaria', countInCm: true },
+  { id: 'molly',      name: 'Molly',       cm: 12, minLiters: 80,  minGroup: 5,  temperament: 'Pacífico y activo', countInCm: true },
+  { id: 'platy',      name: 'Platy',       cm: 7,  minLiters: 60,  minGroup: 6,  temperament: 'Pacífico', countInCm: true },
+  { id: 'ramirezi',   name: 'Ramirezi',    cm: 7,  minLiters: 80,  minGroup: 2,  temperament: 'Pacífico, territorial en reproducción', countInCm: true },
+  { id: 'disco',      name: 'Pez disco',   cm: 20, minLiters: 250, minGroup: 5, temperament: 'Pacífico y gregario', countInCm: true },
+  { id: 'escalar',    name: 'Pez escalar', cm: 15, minLiters: 150, minGroup: 5, temperament: 'Pacífico; territorial cuando forma pareja', countInCm: true },
+  { id: 'killifish',  name: 'Killifish',   cm: 6,  minLiters: 20,  minGroup: 2,  temperament: 'Pacífico; machos territoriales entre ellos', countInCm: true },
+  { id: 'otocinclus', name: 'Otocinclus',  cm: 5,  minLiters: 60,  minGroup: 6,  temperament: 'Totalmente pacífico y gregario', countInCm: true },
+  { id: 'gamba',      name: 'Gamba cherry', cm: 3, minLiters: 20, minGroup: 10, temperament: 'Totalmente pacífica y sociable', countInCm: false }
+];
+var SPECIES_BY_ID = {};
+SPECIES.forEach(function (s) { SPECIES_BY_ID[s.id] = s; });
+
+/* Incompatibilidades claras entre pares de especies (simétricas). */
+var PAIR_RULES = [
+  { a: 'betta', b: 'guppy', level: 'error', msg: 'El betta macho suele confundir las colas largas y coloridas de los guppys macho con un rival y atacarlas. Combinación no recomendada.' },
+  { a: 'betta', b: 'gamba', level: 'attention', msg: 'El betta puede cazar gambas cherry, sobre todo las crías. Con un betta, la colonia de gambas no prospera.' },
+  { a: 'betta', b: 'neon', level: 'attention', msg: 'Combinación de riesgo: algunos bettas acosan a los neones. Solo en acuarios amplios (60 litros o más), con escondites y un plan B para separarlos.' },
+  { a: 'betta', b: 'otocinclus', level: 'attention', msg: 'Evita el betta si es territorial: puede acosar a los otocinclus, que no tienen forma de defenderse.' },
+  { a: 'escalar', b: 'neon', level: 'attention', msg: 'El escalar adulto puede comerse tetras pequeños como el neón. Con escalares, mejor tetras de tamaño medio.' },
+  { a: 'molly', b: 'neon', level: 'attention', msg: 'Prefieren aguas distintas: el molly agua dura y alcalina y el neón agua blanda y ligeramente ácida. En agua neutra y estable pueden adaptarse, pero no es la combinación ideal.' },
+  { a: 'ramirezi', b: 'escalar', level: 'attention', msg: 'Dos cíclidos territoriales en el mismo acuario: cada uno necesita su propio territorio y escondites suficientes.' },
+  { a: 'ramirezi', b: 'betta', level: 'attention', msg: 'Dos especies territoriales en el mismo acuario: el ramirezi y el betta necesitan cada uno su espacio y escondites.' }
+];
+
+/* Cálculo puro: litros + selección [{id, count}] -> resultado. */
+function calculate(liters, selection) {
+  var warnings = [];
+  var totalCm = 0;
+  var fishCount = 0;
+  var shrimpCount = 0;
+  var ids = {};
+  selection.forEach(function (item) {
+    var sp = SPECIES_BY_ID[item.id];
+    if (!sp || !(item.count > 0)) return;
+    ids[item.id] = item.count;
+    fishCount += item.count;
+    if (sp.countInCm) totalCm += item.count * sp.cm;
+    else shrimpCount += item.count;
+    if (liters > 0 && liters < sp.minLiters) {
+      warnings.push({ level: 'error', msg: 'El ' + sp.name.toLowerCase() + ' necesita al menos ' + sp.minLiters + ' litros y tu acuario tiene ' + liters + ' L.' });
+    }
+    if (item.count < sp.minGroup) {
+      var need = sp.minGroup === 1 ? 'un solo ejemplar' : 'un grupo de al menos ' + sp.minGroup + ' ejemplares';
+      warnings.push({ level: 'attention', msg: 'El ' + sp.name.toLowerCase() + ' necesita ' + need + ': llevas ' + item.count + '. En grupos pequeños se estresa y no muestra su comportamiento natural.' });
+    }
+  });
+  if (ids.betta && ids.betta > 1) {
+    warnings.push({ level: 'error', msg: 'Solo un macho betta por acuario: dos machos pelearán hasta causarse daños graves.' });
+  }
+  if (ids.escalar && ids.escalar >= 2 && ids.escalar <= 4) {
+    warnings.push({ level: 'attention', msg: 'Con 2–4 escalares, el dominante puede acosar sin descanso al más débil. Mejor un grupo de 5–6 juveniles o una pareja ya formada.' });
+  }
+  if (ids.ramirezi && ids.ramirezi >= 3 && liters > 0 && liters < 120) {
+    warnings.push({ level: 'attention', msg: 'Un grupo de ramirezi necesita 120 litros o más, con escondites para que cada uno tenga su territorio.' });
+  }
+  PAIR_RULES.forEach(function (rule) {
+    if (ids[rule.a] && ids[rule.b]) warnings.push({ level: rule.level, msg: rule.msg });
+  });
+  if (ids.guppy || ids.molly || ids.platy) {
+    warnings.push({ level: 'info', msg: 'Los vivíparos (guppy, molly, platy) se reproducen con facilidad: si mezclas machos y hembras, deja margen para las crías.' });
+  }
+  var occupancy = liters > 0 ? totalCm / liters : 0;
+  var verdict;
+  if (selection.length === 0 || fishCount === 0) verdict = 'empty';
+  else if (occupancy <= 0.8) verdict = 'ok';
+  else if (occupancy <= 1.0) verdict = 'limit';
+  else verdict = 'over';
+  return { totalCm: totalCm, fishCount: fishCount, shrimpCount: shrimpCount, occupancy: occupancy, verdict: verdict, warnings: warnings };
+}
+
+if (typeof document !== 'undefined') {
+  var litersInput = document.getElementById('liters');
+  var selectEl = document.getElementById('species-select');
+  var countInput = document.getElementById('species-count');
+  var addBtn = document.getElementById('add-species');
+  var listBody = document.getElementById('species-list');
+  var listWrap = document.getElementById('list-wrap');
+  var emptyMsg = document.getElementById('empty-list');
+  var meterFill = document.getElementById('meter-fill');
+  var verdictEl = document.getElementById('verdict');
+  var summaryEl = document.getElementById('summary');
+  var warningsEl = document.getElementById('warnings');
+  var selection = [];
+
+  SPECIES.forEach(function (sp) {
+    var opt = document.createElement('option');
+    opt.value = sp.id;
+    opt.textContent = sp.name + ' — ' + sp.cm + ' cm adulto, mín. ' + sp.minLiters + ' L';
+    selectEl.appendChild(opt);
+  });
+
+  function render() {
+    var liters = parseInt(litersInput.value, 10);
+    if (isNaN(liters) || liters < 0) liters = 0;
+    listBody.innerHTML = '';
+    selection.forEach(function (item, idx) {
+      var sp = SPECIES_BY_ID[item.id];
+      var tr = document.createElement('tr');
+      var load = sp.countInCm ? (item.count * sp.cm) : 0;
+      tr.innerHTML =
+        '<td><strong>' + sp.name + '</strong><br><span class="calc-hint">' + sp.temperament + '</span></td>' +
+        '<td class="num"><span class="qty"><button type="button" class="qty-btn" data-act="dec" data-idx="' + idx + '" aria-label="Quitar un ejemplar">−</button> ' + item.count + ' <button type="button" class="qty-btn" data-act="inc" data-idx="' + idx + '" aria-label="Añadir un ejemplar">+</button></span></td>' +
+        '<td class="num">' + sp.cm + ' cm</td>' +
+        '<td class="num">' + (sp.countInCm ? load + ' cm' : '— *') + '</td>' +
+        '<td class="num"><button type="button" class="qty-btn remove" data-act="del" data-idx="' + idx + '" aria-label="Eliminar ' + sp.name + '">×</button></td>';
+      listBody.appendChild(tr);
+    });
+    var hasItems = selection.length > 0;
+    listWrap.hidden = !hasItems;
+    emptyMsg.hidden = hasItems;
+    var result = calculate(liters, selection);
+    var pct = Math.round(result.occupancy * 100);
+    meterFill.style.width = Math.min(pct, 100) + '%';
+    meterFill.style.background = result.verdict === 'ok' ? 'var(--sea-green)' : (result.verdict === 'limit' ? 'var(--primary)' : 'var(--coral)');
+    verdictEl.className = 'calc-verdict ' + (result.verdict === 'ok' ? 'ok' : (result.verdict === 'limit' ? 'limit' : (result.verdict === 'over' ? 'over' : '')));
+    if (result.verdict === 'empty') {
+      verdictEl.textContent = 'Añade especies para ver el resultado.';
+      summaryEl.textContent = '';
+    } else if (liters <= 0) {
+      verdictEl.textContent = 'Indica los litros de tu acuario.';
+      summaryEl.textContent = '';
+    } else {
+      var shrimpNote = result.shrimpCount > 0 ? ' (' + result.shrimpCount + ' gambas cherry no suman centímetros: su carga biológica es muy baja)' : '';
+      summaryEl.textContent = result.fishCount + ' ejemplares · ' + result.totalCm + ' cm de carga total en ' + liters + ' L · ' + pct + ' % de la referencia orientativa (1 cm por litro)' + shrimpNote + '.';
+      if (result.verdict === 'ok') verdictEl.textContent = 'Dentro de lo orientativo, con margen.';
+      else if (result.verdict === 'limit') verdictEl.textContent = 'Dentro de lo orientativo, pero cerca del límite.';
+      else verdictEl.textContent = 'Por encima de la referencia orientativa.';
+    }
+    warningsEl.innerHTML = '';
+    var shown = result.warnings.slice();
+    if (result.verdict === 'ok' && shown.filter(function (w) { return w.level !== 'info'; }).length === 0) {
+      shown.unshift({ level: 'ok', msg: 'Sin avisos: litros mínimos, grupos mínimos y compatibilidad en orden según los datos de las guías.' });
+    }
+    shown.forEach(function (w) {
+      var li = document.createElement('li');
+      li.className = 'w-' + w.level;
+      li.innerHTML = '<strong>' + (w.level === 'error' ? '⚠ No recomendado: ' : (w.level === 'attention' ? 'Atención: ' : (w.level === 'info' ? 'Ten en cuenta: ' : 'Correcto: '))) + '</strong>' + w.msg;
+      warningsEl.appendChild(li);
+    });
+  }
+
+  listBody.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    var idx = parseInt(btn.getAttribute('data-idx'), 10);
+    var act = btn.getAttribute('data-act');
+    if (act === 'inc') selection[idx].count += 1;
+    else if (act === 'dec') { selection[idx].count -= 1; if (selection[idx].count <= 0) selection.splice(idx, 1); }
+    else if (act === 'del') selection.splice(idx, 1);
+    render();
+  });
+  addBtn.addEventListener('click', function () {
+    var id = selectEl.value;
+    var n = parseInt(countInput.value, 10);
+    if (isNaN(n) || n < 1) n = 1;
+    if (n > 200) n = 200;
+    var existing = selection.find(function (item) { return item.id === id; });
+    if (existing) existing.count += n;
+    else selection.push({ id: id, count: n });
+    render();
+  });
+  litersInput.addEventListener('input', render);
+  render();
+}
+</script>

@@ -30,7 +30,7 @@
   "author": {"@type": "Organization", "name": "AquaPez"},
   "publisher": {"@type": "Organization", "name": "AquaPez"},
   "datePublished": "2026-11-01",
-  "dateModified": "2026-11-01",
+  "dateModified": "2026-11-16",
   "inLanguage": "es",
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aquapez.com/articulos/parametros-agua-acuario/"}
 }
@@ -53,23 +53,23 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Un pH de 8 sirve para tetras neón?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No es lo ideal. El neón tetra prefiere agua ligeramente ácida a neutra (pH 6,0-7,0). Con pH 8 constante vivirá estresado y más vulnerable a enfermedades. Mejor elegir especies acordes a tu agua, como guppys o mollys, que prefieren aguas alcalinas."}
+      "name": "¿Por qué baja el pH solo cada semana si no toco nada?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Lo más probable es que el KH se esté agotando: cada aporte de ácidos consume carbonatos, y cuando el KH cae por debajo de 3 °dKH el pH ya no tiene amortiguador. Mide el KH y reponlo con cambios de agua o sales de carbonatos en pequeñas dosis."}
     },
     {
       "@type": "Question",
-      "name": "¿Cómo bajo el pH del acuario de forma segura?",
-      "acceptedAnswer": {"@type": "Answer", "text": "La forma más estable es bajar el KH primero (con agua de ósmosis mezclada con la del grifo), porque el pH sigue al KH. Los troncos y la turba lo bajan de forma suave y natural. Evita los correctores químicos de efecto rápido: provocan oscilaciones peligrosas."}
+      "name": "¿Un nitrato de 50 mg/L mata a los peces?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No de forma inmediata, pero indica un acuario sobrecargado. Baja a menos de 20 mg/L con cambios del 25–30 % dos veces por semana, reduce la comida y revisa si hay sobrepoblación. Por encima de 40 mg/L de forma sostenida no es aceptable en un comunitario."}
     },
     {
       "@type": "Question",
-      "name": "¿Es malo tener el KH muy bajo?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Por debajo de 3 °dKH el agua pierde su capacidad de amortiguar el pH y cualquier ácido (CO2, desechos) puede desplomarlo de golpe. Es especialmente arriesgado si inyectas CO2. Mantén el KH entre 3 y 8 para un comunitario estable."}
+      "name": "¿Puedo corregir el pH y el KH el mismo día?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No es recomendable. El pH sigue al KH: corrige primero el KH y espera a medir el efecto antes de tocar el pH. Cambiar dos parámetros a la vez impide saber cuál funcionó y multiplica el riesgo de una oscilación brusca."}
     },
     {
       "@type": "Question",
-      "name": "¿Los nitratos deben estar a cero?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No es necesario ni realista: en un acuario con peces siempre habrá algo de nitrato. El objetivo es mantenerlo por debajo de 40 mg/L (idealmente menos de 20) con cambios parciales de agua semanales. Las plantas, además, lo consumen como nutriente."}
+      "name": "¿Por qué el test marca amonio si el acuario lleva meses montado?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Algo rompió el equilibrio bacteriano: limpieza del filtro con agua del grifo, un pez muerto escondido, un filtro apagado horas, o demasiados peces añadidos de golpe. Actúa como emergencia: cambio de agua del 30–50 %, ayuno de 24 horas y medir a diario."}
     }
   ]
 }
@@ -114,101 +114,122 @@
   <article>
     <h1>Parámetros del agua del acuario: pH, GH y KH</h1>
     <p class="article-meta">
-      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot;
-      <span>Lectura: 9 min</span> &middot;
+      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot; Actualizado: <time datetime="2026-11-16">16 de noviembre de 2026</time> &middot;
+      <span>Lectura: 11 min</span> &middot;
       Categoría: <a href="/equipos/">Equipos</a>
     </p>
     <img src="/assets/img/parametros-agua-acuario.webp" srcset="/assets/img/parametros-agua-acuario-800.webp 800w, /assets/img/parametros-agua-acuario.webp 1600w" sizes="(max-width: 640px) 100vw, 800px" alt="Tabla de colores de test de pH junto a un acuario tropical" fetchpriority="high" width="1200" height="800">
 
-    <p class="lead">El agua del grifo no es "agua sin más": trae una acidez, una dureza y una capacidad de amortiguación concretas que deciden qué peces vivirán bien en tu acuario y cuáles sufrirán. Entender el pH, el GH y el KH —y su relación con el amonio, los nitritos y la temperatura— es la base de toda la acuariofilia. No es química avanzada: son seis conceptos que, una vez claros, te acompañan para siempre.</p>
+    <p class="lead">Un neón que boquea en la superficie, un pH que cae de 7,2 a 6,2 en una semana, un nitrato clavado en 80 mg/L pese a los cambios de agua: cada uno de esos síntomas apunta a un parámetro concreto y a una corrección concreta. Esta guía no empieza por la teoría, sino por lo que se ve en el acuario: síntoma visible, qué medir, qué valor buscar y cómo corregirlo sin desestabilizar el resto.</p>
 
-    <h2>Los seis parámetros que importan, en una tabla</h2>
+    <h2>Cómo usar esta guía: del síntoma a la causa</h2>
+    <p>Cada sección siguiente parte de algo que se puede ver o medir en casa. El orden de trabajo es siempre el mismo: <strong>observa el síntoma, mide el parámetro sospechoso con un test de gotas, compara con la tabla de referencia y corrige de forma gradual</strong>. Nunca corrijas a ciegas: dos síntomas parecidos pueden tener causas opuestas, y un corrector aplicado al parámetro equivocado empeora el problema.</p>
     <table>
       <thead>
-        <tr><th>Parámetro</th><th>Qué mide</th><th>Valor seguro (comunitario)</th></tr>
+        <tr><th>Parámetro</th><th>Qué mide</th><th>Valor seguro (comunitario)</th><th>Señal de alarma</th></tr>
       </thead>
       <tbody>
-        <tr><td>Amonio (NH3/NH4)</td><td>Desecho tóxico sin procesar</td><td>0 mg/L, siempre</td></tr>
-        <tr><td>Nitrito (NO2)</td><td>Fase intermedia del ciclado</td><td>0 mg/L, siempre</td></tr>
-        <tr><td>Nitrato (NO3)</td><td>Producto final acumulado</td><td>Menos de 40 mg/L</td></tr>
-        <tr><td>pH</td><td>Acidez del agua</td><td>6,5–7,5</td></tr>
-        <tr><td>GH</td><td>Dureza total</td><td>4–12 °dGH</td></tr>
-        <tr><td>KH</td><td>Dureza de carbonatos</td><td>3–8 °dKH</td></tr>
-        <tr><td>Temperatura</td><td>Calor del agua</td><td>24–26 °C</td></tr>
+        <tr><td>Amonio (NH3/NH4)</td><td>Desecho tóxico sin procesar</td><td>0 mg/L, siempre</td><td>Cualquier lectura por encima de 0</td></tr>
+        <tr><td>Nitrito (NO2)</td><td>Fase intermedia del ciclado</td><td>0 mg/L, siempre</td><td>Cualquier lectura por encima de 0</td></tr>
+        <tr><td>Nitrato (NO3)</td><td>Producto final acumulado</td><td>Menos de 20 mg/L (límite 40)</td><td>Más de 40 mg/L de forma sostenida</td></tr>
+        <tr><td>pH</td><td>Acidez del agua</td><td>6,5–7,5</td><td>Cambios de más de 0,3 en un día</td></tr>
+        <tr><td>GH</td><td>Dureza total (calcio y magnesio)</td><td>4–12 °dGH</td><td>Por debajo de 3 o por encima de 16 °dGH</td></tr>
+        <tr><td>KH</td><td>Dureza de carbonatos (amortiguador del pH)</td><td>3–8 °dKH</td><td>Por debajo de 3 °dKH</td></tr>
+        <tr><td>Temperatura</td><td>Calor del agua</td><td>24–26 °C</td><td>Variaciones de más de 2 °C en un día</td></tr>
       </tbody>
     </table>
-    <p>Para medirlos en casa tienes la guía de <a href="/articulos/test-agua-acuario/">tests de agua: tiras vs gotas</a>. Aquí nos centramos en qué significa cada uno.</p>
+    <p>Para medirlos en casa tienes la guía de <a href="/articulos/test-agua-acuario/">tests de agua: tiras vs gotas</a>. Los tests de gotas son más precisos que las tiras, sobre todo para amonio y nitrito, donde la diferencia entre 0 y 0,25 mg/L importa.</p>
 
-    <h2>pH: la acidez del agua</h2>
-    <p>El pH mide si el agua es ácida (menos de 7), neutra (7) o alcalina (más de 7), en una escala logarítmica: cada punto entero multiplica por diez la acidez. Por eso un cambio de pH 7 a pH 6 no es "un poquito más ácido", sino diez veces más ácido, y los peces lo notan.</p>
-    <table>
-      <thead>
-        <tr><th>Especie o grupo</th><th>pH preferido</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Neón tetra, ramirezi, disco</td><td>6,0–7,0 (ácida a neutra)</td></tr>
-        <tr><td>Comunitario general (tetras, corydoras, escalares)</td><td>6,5–7,5</td></tr>
-        <tr><td>Guppy, molly, platy</td><td>7,0–8,0 (neutra a alcalina)</td></tr>
-      </tbody>
-    </table>
-    <p>La mayoría de los peces de criadero toleran un rango más amplio que el de su hábitat salvaje, pero la <strong>estabilidad</strong> es innegociable: un pH constante de 7,6 es preferible a un pH que oscila entre 6,8 y 7,4. Por eso se desaconsejan los correctores químicos de efecto rápido: suben o bajan el pH de golpe y a las horas rebota.</p>
-    <p>Un matiz interesante: en acuarios plantados con CO2, el pH baja durante el día (el CO2 forma ácido carbónico) y sube de noche al cortarse la inyección. Esa oscilación diaria de medio punto a un punto es normal y los peces la toleran bien porque es gradual y predecible. Lo que no toleran son los cambios bruscos provocados por correctores químicos o por un KH desplomado. Si mides el pH, hazlo siempre a la misma hora para comparar lecturas equivalentes.</p>
+    <h2>Síntoma 1: los peces boquean en la superficie o se quedan quietos en el fondo</h2>
+    <p><strong>Qué medir primero:</strong> amonio y nitrito. Si alguno está por encima de 0 mg/L, el acuario está en emergencia química: ambos dañan las branquias y el pez boquea porque no puede extraer oxígeno, aunque el agua parezca bien oxigenada.</p>
+    <p><strong>Si amonio y nitrito están a 0:</strong> el problema suele ser oxígeno o temperatura. El agua caliente retiene menos oxígeno: a 30 °C el agua disuelve notablemente menos oxígeno que a 24 °C, así que un acuario cálido con poca agitación superficial se queda corto. También revisa que la salida del filtro mueva la superficie y que no haya una capa de polvo o biofilm cubriéndola.</p>
+    <p><strong>Corrección:</strong> con amonio o nitrito detectados, cambio de agua inmediato del 30–50 % con agua acondicionada, ayuno de 24 horas y revisión del filtro (¿se limpió con agua del grifo y se perdió la colonia bacteriana?). Sin tóxicos detectados, aumenta la agitación superficial y baja la temperatura un grado si está por encima del rango de tus peces. No añadas peces nuevos hasta que el síntoma desaparezca.</p>
+
+    <h2>Síntoma 2: el pH baja solo, semana tras semana</h2>
+    <p><strong>Qué medir primero:</strong> el KH. Un pH que cae de forma progresiva casi siempre es un KH agotado: por debajo de 3 °dKH el agua pierde su capacidad de amortiguar los ácidos que generan los desechos, el <a href="/articulos/co2-acuario-plantado/">CO2</a> y la descomposición, y el pH se desploma. Es el fallo de parámetros más común en acuarios con poca renovación de agua.</p>
+    <p><strong>Otras causas:</strong> sustrato nutritivo activo nuevo (baja el pH y el KH durante semanas o meses), turba o troncos en exceso, o inyección de CO2 mal ajustada. En acuarios plantados con CO2, una oscilación diaria de medio punto es normal —el pH baja de día y sube de noche—; lo peligroso es la tendencia descendente semana a semana.</p>
+    <p><strong>Corrección:</strong> cambios parciales de agua con agua del grifo (que suele traer KH) para reponer carbonatos, poco a poco y midiendo entre cambios. Si el agua del grifo también es muy blanda, se usan sales de carbonatos dosificadas en pequeñas cantidades. Lo que no funciona es subir el pH con un corrector químico sin tocar el KH: el pH rebota en horas y el vaivén estresa más a los peces que el valor bajo en sí. La regla es que <strong>el pH sigue al KH</strong>.</p>
 
     <!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: in-article | Ver ADSENSE.md. -->
     <div class="ad-slot" data-ad-slot="in-article" aria-hidden="true"></div>
 
-    <h2>GH y KH: las dos durezas</h2>
-    <p>La <strong>GH (dureza total)</strong> mide la concentración de calcio y magnesio: es la "dureza" del agua en sentido cotidiano. Influye en la osmorregulación de los peces (cómo gestionan las sales de su cuerpo) y en la reproducción de muchas especies. Se expresa en grados alemanes (°dGH): menos de 8 es agua blanda, 8-12 media y más de 12 dura.</p>
-    <p>La <strong>KH (dureza de carbonatos)</strong> mide los carbonatos y bicarbonatos, que actúan como <strong>amortiguador del pH</strong>: absorben los ácidos y evitan que el pH se desplome. Es el parámetro más subestimado por los principiantes y uno de los más importantes:</p>
-    <ul>
-      <li><strong>KH entre 3 y 8:</strong> pH estable, margen de seguridad bueno. Ideal para el comunitario.</li>
-      <li><strong>KH por debajo de 3:</strong> el pH puede caer en picada ante cualquier ácido (CO2, desechos, turba). Peligroso si inyectas <a href="/articulos/co2-acuario-plantado/">CO2</a>.</li>
-      <li><strong>KH muy alto (más de 10):</strong> el pH se queda "clavado" en valores alcalinos y cuesta bajarlo; típico de aguas muy duras.</li>
-    </ul>
-    <p>Relación clave: <strong>el pH sigue al KH</strong>. Si quieres un pH más bajo de forma estable, primero baja el KH (mezclando agua de ósmosis, por ejemplo); intentar bajar el pH con el KH alto es pelear contra la química del agua.</p>
+    <h2>Síntoma 3: amonio o nitrito por encima de cero en un acuario que ya estaba ciclado</h2>
+    <p><strong>Causas probables:</strong> el ciclado se perdió o se sobrepasó. Las más frecuentes son limpiar el material filtrante con agua del grifo (el cloro mata las bacterias), añadir demasiados peces de golpe, un pez muerto escondido entre la decoración, o un filtro apagado varias horas (sin oxígeno, la colonia bacteriana muere). Repasa el proceso en la guía de <a href="/articulos/ciclado-acuario-guia-completa/">ciclado del acuario</a>.</p>
+    <p><strong>Corrección (emergencia):</strong> cambio de agua del 30–50 % de inmediato, ayuno de 24 horas, retirar cualquier resto orgánico y medir a diario hasta que ambos vuelvan a 0. Un detalle químico que agrava el cuadro: con pH alto, una mayor proporción del amonio está en su forma más tóxica (NH3), así que un pico de amonio con pH 8 es más peligroso que el mismo pico con pH 6,5.</p>
+    <p><strong>Lo que no hay que hacer:</strong> añadir más bacterias de bote esperando un milagro mientras los peces siguen expuestos, ni cambiar todo el material filtrante de golpe. La colonia se recupera con agua limpia, oxígeno y tiempo, no con productos.</p>
 
-    <h2>Amonio, nitrito y nitrato: el ciclo del nitrógeno</h2>
-    <p>Los peces excretan amonio, que es muy tóxico. Las bacterias del filtro y del sustrato lo convierten en nitrito (también tóxico) y luego en nitrato (mucho menos peligroso). Esa cadena es el ciclo del nitrógeno, y establecerla es lo que se llama <a href="/articulos/ciclado-acuario-guia-completa/">ciclado del acuario</a>.</p>
-    <ul>
-      <li><strong>Amonio y nitrito deben estar siempre a 0 mg/L</strong> en un acuario maduro. Cualquier lectura por encima de cero indica un problema: ciclado incompleto, filtro insuficiente o exceso de peces.</li>
-      <li><strong>El nitrato se acumula</strong> y solo sale con cambios parciales de agua (y en parte lo consumen las plantas). Mantenerlo por debajo de 40 mg/L con cambios semanales del 20-30 % es el estándar.</li>
-      <li>Un detalle químico: con pH alto, una mayor proporción del amonio está en su forma más tóxica (NH3). Otra razón para no descuidar el pH.</li>
-    </ul>
+    <h2>Síntoma 4: los nitratos no bajan de 40 mg/L</h2>
+    <p><strong>Qué revisar:</strong> el nitrato es el producto final del ciclo del nitrógeno y solo sale del acuario con cambios de agua y, en parte, con el consumo de las plantas. Si no baja de 40 mg/L pese a cambiar agua, la entrada de nitrógeno supera la salida. Las causas habituales son sobrepoblación, sobrealimentación (la comida no comida se descompone) o cambios demasiado pequeños o espaciados.</p>
+    <p><strong>Corrección:</strong> cambios del 25–30 % dos veces por semana hasta bajar de 20 mg/L, y después mantener la rutina semanal. Reduce la comida a lo que los peces consuman en dos o tres minutos y sifona los restos del fondo en cada cambio. Si el acuario está sobrepoblado, ningún cambio de agua compensa: conviene revisar la carga con la <a href="/herramientas/calculadora-de-poblacion/">calculadora de población</a> y la guía de <a href="/articulos/cambio-agua-acuario/">cambio de agua del acuario</a>. Plantas de crecimiento rápido (tallos, flotantes) ayudan a consumir nitrato, pero no sustituyen los cambios.</p>
+    <p><strong>El objetivo realista:</strong> por debajo de 40 mg/L es el límite aceptado, pero por debajo de 20 mg/L es donde los peces muestran mejor color y salud. Cero no es necesario ni realista en un acuario con peces.</p>
 
-    <h2>Temperatura: el parámetro olvidado</h2>
+    <h2>Síntoma 5: los peces pierden color, se esconden o dejan de comer sin causa aparente</h2>
+    <p><strong>Qué medir primero:</strong> pH y GH, y compararlos con lo que la especie necesita. Un pez en agua químicamente equivocada vive en estrés crónico: se apaga, se esconde y enferma con facilidad, aunque amonio y nitrito estén a cero. Es el síntoma más mal diagnosticado, porque se suele buscar una enfermedad cuando el problema es el agua.</p>
     <table>
       <thead>
-        <tr><th>Grupo</th><th>Rango ideal</th></tr>
+        <tr><th>Grupo</th><th>pH preferido</th><th>GH preferida</th><th>Temperatura</th></tr>
       </thead>
       <tbody>
-        <tr><td>Comunitario tropical general</td><td>24–26 °C</td></tr>
-        <tr><td>Betta</td><td>25–27 °C</td></tr>
-        <tr><td>Disco, ramirezi</td><td>27–30 °C</td></tr>
-        <tr><td>Guppy, platy, molly</td><td>24–26 °C</td></tr>
+        <tr><td>Amazónicos (neón tetra, ramirezi, disco)</td><td>6,0–7,0</td><td>1–8 °dGH (blanda)</td><td>22–30 °C según la especie</td></tr>
+        <tr><td>Comunitario general (tetras, corydoras, escalares)</td><td>6,5–7,5</td><td>4–12 °dGH</td><td>24–26 °C</td></tr>
+        <tr><td>Vivíparos (guppy, molly, platy)</td><td>7,0–8,0</td><td>8–16 °dGH (media a dura)</td><td>24–26 °C</td></tr>
       </tbody>
     </table>
-    <p>Como con el pH, la estabilidad manda sobre el número exacto. Un <a href="/articulos/calentador-acuario-como-elegir/">calentador con termostato</a> y un termómetro independiente son el equipo mínimo para mantenerla.</p>
+    <p>Un neón tetra en pH 8 y agua dura no muere de un día para otro: se va apagando durante semanas. Y a la inversa, un guppy en agua muy blanda y ácida sufre problemas de osmorregulación. La lección práctica es elegir las especies según el agua que sale de tu grifo, no al revés: adaptar el agua a los peces es posible, pero exige constancia en cada cambio. La <strong>estabilidad manda sobre el número exacto</strong>: un pH constante de 7,6 es preferible a un pH que oscila entre 6,8 y 7,4.</p>
 
-    <h2>Cómo ajustar cada parámetro sin sustos</h2>
-    <ul>
-      <li><strong>Bajar el pH:</strong> mezcla agua de ósmosis con la del grifo para bajar el KH; añade troncos naturales o turba para un descenso suave. Hazlo gradualmente, en días.</li>
-      <li><strong>Subir el pH/KH:</strong> sales específicas de carbonatos, dosificadas poco a poco y midiendo entre ajustes.</li>
-      <li><strong>Bajar el GH:</strong> agua de ósmosis. No hay atajos seguros.</li>
-      <li><strong>Bajar nitratos:</strong> cambios de agua parciales y frecuentes; revisa si hay exceso de peces o de comida.</li>
-      <li><strong>Amonio/nitrito detectados:</strong> cambio de agua inmediato del 30-50 %, ayuno de 24 h y revisión del filtro. Es una emergencia, no un ajuste.</li>
-    </ul>
-    <p>Merece un párrafo propio la herramienta más poderosa y subestimada: el cambio parcial de agua. Un cambio del 20-30 % con agua acondicionada diluye nitratos, repone minerales consumidos y estabiliza el pH, todo a la vez y sin productos químicos. Muchos problemas de parámetros se resuelven simplemente retomando la rutina de cambios semanales que se había abandonado. Antes de comprar cualquier corrector, pregúntate cuándo fue tu último cambio de agua.</p>
-    <p>Y la regla de oro de los ajustes: <strong>un parámetro a la vez, despacio y midiendo</strong>. Los cambios bruscos matan más peces que los valores imperfectos pero estables.</p>
+    <h2>Síntoma 6: el agua huele mal o se vuelve turbia de repente</h2>
+    <p><strong>Qué medir primero:</strong> amonio y nitrito, y después nitrato. El agua turbia blanquecina en un acuario nuevo es proliferación bacteriana y suele resolverse sola al madurar el ciclado; en un acuario maduro, el olor a podrido o a huevos apunta a materia orgánica en descomposición —un pez muerto, comida acumulada bajo la decoración o un sustrato compactado sin oxígeno— o a un filtro obstruido que ya no mueve agua.</p>
+    <p><strong>Corrección:</strong> busca y retira la fuente (levanta decoraciones, revisa detrás del filtro), sifona el fondo y haz un cambio de agua del 30 %. Si el filtro apenas echa agua, límpialo con agua del propio acuario, nunca con agua del grifo. Un acuario sano huele a tierra húmeda o a nada; si huele mal, hay algo descomponiéndose.</p>
 
-    <h2>Preguntas frecuentes</h2>
-    <h3>¿Un pH de 8 sirve para tetras neón?</h3>
-    <p>No es lo ideal. El neón tetra prefiere agua ligeramente ácida a neutra (pH 6,0-7,0). Con pH 8 constante vivirá estresado y más vulnerable a enfermedades. Mejor elegir especies acordes a tu agua, como guppys o mollys, que prefieren aguas alcalinas.</p>
-    <h3>¿Cómo bajo el pH del acuario de forma segura?</h3>
-    <p>La forma más estable es bajar el KH primero (con agua de ósmosis mezclada con la del grifo), porque el pH sigue al KH. Los troncos y la turba lo bajan de forma suave y natural. Evita los correctores químicos de efecto rápido: provocan oscilaciones peligrosas.</p>
-    <h3>¿Es malo tener el KH muy bajo?</h3>
-    <p>Por debajo de 3 °dKH el agua pierde su capacidad de amortiguar el pH y cualquier ácido (CO2, desechos) puede desplomarlo de golpe. Es especialmente arriesgado si inyectas CO2. Mantén el KH entre 3 y 8 para un comunitario estable.</p>
-    <h3>¿Los nitratos deben estar a cero?</h3>
-    <p>No es necesario ni realista: en un acuario con peces siempre habrá algo de nitrato. El objetivo es mantenerlo por debajo de 40 mg/L (idealmente menos de 20) con cambios parciales de agua semanales. Las plantas, además, lo consumen como nutriente.</p>
+    <h2>Valores de referencia según el tipo de acuario</h2>
+    <p>No todos los acuarios buscan los mismos números. Esta tabla resume el objetivo según el biotopo, para que no persigas un pH 7,0 neutro cuando tus peces necesitan otra cosa:</p>
+    <table>
+      <thead>
+        <tr><th>Tipo de acuario</th><th>pH</th><th>GH</th><th>KH</th><th>Temperatura</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Amazónico / aguas blandas</td><td>6,0–7,0</td><td>1–8 °dGH</td><td>1–4 °dKH</td><td>24–28 °C</td></tr>
+        <tr><td>Comunitario tropical general</td><td>6,5–7,5</td><td>4–12 °dGH</td><td>3–8 °dKH</td><td>24–26 °C</td></tr>
+        <tr><td>Vivíparos / aguas duras</td><td>7,0–8,0</td><td>8–16 °dGH</td><td>6–12 °dKH</td><td>24–26 °C</td></tr>
+        <tr><td>Plantado con CO2</td><td>6,5–7,0 (oscila en el día)</td><td>4–8 °dGH</td><td>3–6 °dKH</td><td>24–26 °C</td></tr>
+      </tbody>
+    </table>
+    <p>Como con el pH, en temperatura la estabilidad manda sobre el número exacto. Un <a href="/articulos/calentador-acuario-como-elegir/">calentador con termostato</a> y un termómetro independiente son el equipo mínimo para mantenerla, y conviene medir el pH siempre a la misma hora para comparar lecturas equivalentes.</p>
+
+    <h2>Correcciones seguras, en orden de prioridad</h2>
+    <p>Cuando varios parámetros están mal a la vez, el orden importa. La secuencia que menos peces pone en riesgo es:</p>
+    <ol>
+      <li><strong>Cambio parcial de agua (20–30 %).</strong> Diluye nitratos, repone minerales y estabiliza el pH a la vez, sin productos químicos. Muchos problemas se resuelven retomando la rutina de cambios semanales que se había abandonado.</li>
+      <li><strong>Retirar la causa.</strong> Restos de comida, un pez muerto, un filtro obstruido o una sobrealimentación: sin esto, cualquier corrección es temporal.</li>
+      <li><strong>Ajustar el KH antes que el pH.</strong> Mezcla agua de ósmosis con la del grifo para bajar el KH, o sales de carbonatos para subirlo, en pequeñas dosis y midiendo entre ajustes.</li>
+      <li><strong>El pH, por último y despacio.</strong> Troncos o turba para bajarlo de forma suave; nunca correctores químicos de efecto rápido, que provocan oscilaciones peligrosas.</li>
+      <li><strong>El GH solo con agua de ósmosis.</strong> No hay atajos seguros para bajar la dureza total.</li>
+    </ol>
+    <p>La regla de oro de los ajustes: <strong>un parámetro a la vez, despacio y midiendo</strong>. Los cambios bruscos matan más peces que los valores imperfectos pero estables. Y ante la duda, un cambio de agua es casi siempre la primera respuesta correcta.</p>
+
+    <h2>Rutina de medición: qué medir y cada cuánto</h2>
+    <table>
+      <thead>
+        <tr><th>Frecuencia</th><th>Qué medir</th><th>Por qué</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A diario (acuario nuevo o con problemas)</td><td>Amonio y nitrito</td><td>Detectan la emergencia antes de que haya bajas</td></tr>
+        <tr><td>Semanal</td><td>Nitrato y pH (siempre a la misma hora)</td><td>Marcan si la rutina de cambios es suficiente</td></tr>
+        <tr><td>Mensual</td><td>GH y KH</td><td>Cambian despacio; avisan del agotamiento del KH</td></tr>
+        <tr><td>Tras cada cambio relevante</td><td>pH y temperatura del agua nueva</td><td>El agua de reposición debe coincidir con la del acuario</td></tr>
+      </tbody>
+    </table>
+    <p>Anota las lecturas con fecha. Una serie de mediciones vale más que una lectura aislada: lo que delata un KH agotado o un nitrato en ascenso no es un número, es la tendencia.</p>
+
+    <h2>Preguntas sobre síntomas concretos</h2>
+    <h3>¿Por qué baja el pH solo cada semana si no toco nada?</h3>
+    <p>Lo más probable es que el KH se esté agotando: cada cambio de agua insuficiente o cada aporte de ácidos (desechos, CO2, troncos) consume carbonatos, y cuando el KH cae por debajo de 3 °dKH el pH ya no tiene amortiguador. Mide el KH: si está bajo, reponlo con cambios de agua o sales de carbonatos en pequeñas dosis, y revisa la frecuencia de los cambios.</p>
+    <h3>¿Un nitrato de 50 mg/L mata a los peces?</h3>
+    <p>No de forma inmediata, pero es una señal de que el acuario está sobrecargado y los peces vivirán estresados, con peor color y más enfermedades. Baja a menos de 20 mg/L con cambios del 25–30 % dos veces por semana, reduce la comida y revisa si hay sobrepoblación. Los nitratos por encima de 40 mg/L de forma sostenida no son aceptables en un comunitario.</p>
+    <h3>¿Puedo corregir el pH y el KH el mismo día?</h3>
+    <p>No es recomendable. El pH sigue al KH, así que corrige primero el KH y espera a medir el efecto antes de tocar el pH. Cambiar dos parámetros a la vez impide saber cuál funcionó y multiplica el riesgo de una oscilación brusca. Un parámetro a la vez, despacio y midiendo.</p>
+    <h3>¿Por qué el test marca amonio si el acuario lleva meses montado?</h3>
+    <p>Porque algo rompió el equilibrio bacteriano: una limpieza del filtro con agua del grifo, un pez muerto escondido, un filtro apagado horas, o demasiados peces añadidos de golpe. Actúa como emergencia —cambio de agua del 30–50 %, ayuno de 24 horas, medir a diario— y revisa qué cambió en los últimos días.</p>
 
     <aside class="author-box">
       <p><strong>Equipo AquaPez</strong></p>

@@ -30,7 +30,7 @@
   "author": {"@type": "Organization", "name": "AquaPez"},
   "publisher": {"@type": "Organization", "name": "AquaPez"},
   "datePublished": "2026-11-01",
-  "dateModified": "2026-11-01",
+  "dateModified": "2026-11-16",
   "inLanguage": "es",
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aquapez.com/articulos/ciclado-acuario-guia-completa/"}
 }
@@ -43,19 +43,6 @@
     {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aquapez.com/"},
     {"@type": "ListItem", "position": 2, "name": "Montaje", "item": "https://aquapez.com/montaje/"},
     {"@type": "ListItem", "position": 3, "name": "Ciclado del acuario: guía completa", "item": "https://aquapez.com/articulos/ciclado-acuario-guia-completa/"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-{"@type": "Question", "name": "¿Cuánto dura el ciclado de un acuario?", "acceptedAnswer": {"@type": "Answer", "text": "En condiciones normales, entre 4 y 8 semanas. La temperatura (ideal 25-28 °C), el pH y la superficie del material filtrante influyen en la velocidad. Usar material filtrante maduro de otro acuario puede acortarlo notablemente."}},
-    {"@type": "Question", "name": "¿Sirve usar agua de otro acuario para ciclar más rápido?", "acceptedAnswer": {"@type": "Answer", "text": "Apenas. Las bacterias nitrificantes viven adheridas a superficies (filtro, sustrato, decoración), no flotando en el agua, así que el agua madura traslada muy poca colonia. Lo que realmente acelera el proceso es el material filtrante o parte del sustrato de un acuario estable."}},
-    {"@type": "Question", "name": "¿Las plantas ayudan durante el ciclado?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, como apoyo: absorben amonio y nitrato directamente, lo que amortigua los picos. Pero no sustituyen a la colonia bacteriana del filtro, que es la que procesa la mayor parte de los desechos de forma continua."}},
-    {"@type": "Question", "name": "¿El test de tiras sirve para controlar el ciclado?", "acceptedAnswer": {"@type": "Answer", "text": "Es menos preciso que el test de gotas, sobre todo en los rangos bajos de amonio y nitrito donde se toman las decisiones importantes. Para el ciclado conviene usar un test de gotas, que ofrece lecturas más fiables."}},
-    {"@type": "Question", "name": "¿Cuándo hago el primer cambio de agua?", "acceptedAnswer": {"@type": "Answer", "text": "Al terminar el ciclado, para bajar el nitrato acumulado antes de introducir los peces. A partir de ahí, los cambios parciales semanales forman parte del mantenimiento habitual del acuario."}}
   ]
 }
 </script>
@@ -98,100 +85,127 @@
   <article>
     <h1>Ciclado del acuario: guía completa</h1>
     <p class="article-meta">
-      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot;
-      <span>Lectura: 8 min</span> &middot;
+      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot; <span>Actualizado: <time datetime="2026-11-16">16 de noviembre de 2026</time></span> &middot;
+      <span>Lectura: 10 min</span> &middot;
       Categoría: <a href="/montaje/">Montaje</a>
     </p>
     <img src="/assets/img/ciclado-acuario-guia-completa.webp" srcset="/assets/img/ciclado-acuario-guia-completa-800.webp 800w, /assets/img/ciclado-acuario-guia-completa.webp 1600w" sizes="(max-width: 640px) 100vw, 800px" alt="Test de gotas midiendo amonio durante el ciclado de un acuario nuevo" fetchpriority="high" width="1200" height="800">
 
-<p class="lead">El ciclado es el paso que separa un acuario que prospera de uno donde los peces enferman en las primeras semanas. Antes de que entre el primer pez, el filtro necesita poblarse de bacterias que conviertan los desechos tóxicos en compuestos seguros. Es un proceso invisible, lento y absolutamente obligatorio: aquí está la guía completa para hacerlo bien, sin peces y sin atajos.</p>
+<p class="lead">Meter peces en un acuario sin ciclar es la causa número uno de muertes en las primeras dos semanas: el filtro aún no tiene bacterias que procesen los desechos y el amonio se acumula sin freno. El ciclado tarda de 4 a 8 semanas y se mide en ppm, no en días de calendario. Esta guía es el plan con los números exactos de cada fase: qué dosificar, qué debe marcar el test cada día y cómo saber, sin dudar, cuándo puedes meter los primeros peces.</p>
 
-<h2>Qué es el ciclo del nitrógeno</h2>
-<p>Todo acuario con peces produce desechos: restos de comida, excrementos y la propia respiración de los animales generan <strong>amonio</strong> (NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup>), un compuesto muy tóxico incluso en concentraciones bajas. En un acuario cerrado, procesarlo es el trabajo de las bacterias nitrificantes que colonizan el material filtrante.</p>
-<p>Ocurre en dos etapas: un grupo de bacterias convierte el amonio en <strong>nitrito</strong> (NO<sub>2</sub><sup>-</sup>), también tóxico; otro grupo convierte el nitrito en <strong>nitrato</strong> (NO<sub>3</sub><sup>-</sup>), mucho menos peligroso, controlable con cambios parciales de agua y aprovechable por las plantas como nutriente.</p>
-<p>Estas bacterias no viven flotando en el agua, sino <strong>adheridas a superficies</strong>, sobre todo a las del filtro biológico. Por eso un cambio de agua no elimina la colonia, pero lavar el material filtrante con agua clorada sí puede dañarla. El ciclado consiste en darle tiempo a esa colonia para establecerse <em>antes</em> de introducir los peces.</p>
+    <h2>El ciclo del nitrógeno en tres frases</h2>
+    <p>Los desechos de los peces generan <strong>amonio</strong> (NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup>), muy tóxico incluso en concentraciones bajas. Un grupo de bacterias lo convierte en <strong>nitrito</strong> (NO<sub>2</sub><sup>-</sup>), también tóxico, y otro grupo convierte el nitrito en <strong>nitrato</strong> (NO<sub>3</sub><sup>-</sup>), mucho menos peligroso y controlable con cambios parciales de agua. Esas bacterias no viven flotando en el agua, sino <strong>adheridas a superficies</strong>, sobre todo a las del filtro biológico: por eso un cambio de agua no elimina la colonia, pero lavar el material filtrante con agua clorada sí puede dañarla. El ciclado consiste en darle tiempo a esa colonia para establecerse <em>antes</em> de introducir los peces.</p>
+    <p>Si los peces entran con un filtro estéril, el amonio se acumula y en días aparecen los picos: el <strong>síndrome del acuario nuevo</strong>. Sus síntomas son claros: peces boqueando en superficie, aletas pegadas al cuerpo, apatía, pérdida de apetito y, en casos graves, muertes en la primera o segunda semana. Las plantas amortiguan el problema porque absorben parte del amonio y del nitrato, pero no sustituyen a la colonia bacteriana del filtro.</p>
 
-<h2>Por qué no puedes saltarte el ciclado</h2>
-<p>Si los peces entran con un filtro estéril, el amonio se acumula sin que nada lo procese y en días aparecen picos de amonio y nitrito: el <strong>síndrome del acuario nuevo</strong>. Sus síntomas son claros: peces boqueando en superficie, aletas pegadas al cuerpo, apatía, pérdida de apetito y, en casos graves, muertes en la primera o segunda semana.</p>
-<p>Las plantas amortiguan el problema porque absorben parte del amonio y del nitrato, pero no sustituyen a la colonia bacteriana del filtro. Solo la biología, a su ritmo, convierte el acuario en un entorno estable: unas semanas de paciencia son la inversión más barata de todo el hobby.</p>
+    <h2>Antes del día 1: lo que necesitas</h2>
+    <ul>
+      <li><strong>Test de gotas</strong> de amonio, nitrito, nitrato y pH. Las tiras son menos precisas justo en los rangos bajos donde se toman las decisiones importantes; para el ciclado conviene el test de gotas.</li>
+      <li><strong>Fuente de amonio:</strong> amoníaco puro (hidróxido de amonio) <strong>sin perfumes, colorantes ni surfactantes</strong> —lee la etiqueta, porque muchos limpiadores llevan aditivos que arruinan el acuario— o, como alternativa, comida de peces en descomposición dentro de una media de red.</li>
+      <li><strong>Acondicionador de agua</strong> para neutralizar el cloro y la cloramina del grifo en cada cambio.</li>
+      <li><strong>Cuaderno o tabla de registro</strong> para anotar cada medición: ver la curva descender ayuda a mantener la paciencia durante la espera.</li>
+      <li><strong>Filtro funcionando las 24 horas y calentador</strong> ajustado entre 25 y 28&nbsp;°C, el rango en el que las bacterias trabajan mejor.</li>
+    </ul>
 
-<!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: in-article | Ver ADSENSE.md. -->
-<div class="ad-slot" data-ad-slot="in-article" aria-hidden="true"></div>
+    <h2>El plan día a día: 8 pasos con números exactos</h2>
+    <p>Este es el ciclado sin peces: se alimenta a las bacterias con amonio artificial, sin exponer a ningún animal a los picos tóxicos. Sigue los pasos en orden y anota cada medición.</p>
+    <ol>
+      <li><strong>Día 1 — Monta el acuario completo.</strong> Filtro funcionando las 24 horas, calentador a 25–28&nbsp;°C, sustrato, decoración y plantas si las hay. El filtro no debe apagarse en ningún momento del proceso.</li>
+      <li><strong>Día 1 — Dosifica amonio hasta 2–4 ppm.</strong> Añade la fuente poco a poco, espera una hora y mide con el test de gotas hasta alcanzar <strong>2–4 ppm de amonio total</strong>. No pases de 4 ppm: más amonio no acelera el proceso, lo frena.</li>
+      <li><strong>Día 3 — Primera medición completa.</strong> Mide amonio, nitrito y nitrato y anota los tres valores. Lo normal es ver amonio en 2–4 ppm, nitrito en 0 y nitrato en 0: las bacterias aún son escasas.</li>
+      <li><strong>Días 4–7 — Espera la primera bajada.</strong> El amonio debería empezar a descender hacia el final de la primera semana. Si sigue en 2–4 ppm, ten paciencia y no añadas más: sin bajada no hay nada que reponer.</li>
+      <li><strong>Días 7–14 — Aparece el nitrito.</strong> Cuando el amonio caiga por debajo de 0,5 ppm, vuelve a dosificar hasta 2 ppm: sin amonio, la colonia deja de crecer. El nitrito sube en esta fase y puede llegar a 1–5 ppm; es lo esperado, no un problema.</li>
+      <li><strong>Días 14–28 — El nitrito baja y el nitrato sube.</strong> El segundo grupo de bacterias gana terreno: el nitrito desciende y el nitrato empieza a acumularse (20–80 ppm al final del proceso es normal). Sigue reponiendo amonio a 2 ppm cada vez que caiga a cero.</li>
+      <li><strong>Días 28–42 — La prueba final de 24 horas.</strong> Dosifica amonio hasta 2 ppm y espera 24 horas. Si mides <strong>amonio en 0 y nitrito en 0</strong>, con nitrato presente, el ciclo está completo. Si alguno de los dos no llega a cero, sigue dosificando y midiendo cada 2–3 días.</li>
+      <li><strong>Día final — Cambio de agua e introducción gradual.</strong> Haz un cambio parcial generoso para bajar el nitrato acumulado (ideal: por debajo de 20 ppm). Después, introduce los peces <strong>de forma gradual</strong>, unos pocos cada semana, para que la colonia se ajuste al aumento de carga.</li>
+    </ol>
 
-<h2>Ciclado sin peces, paso a paso</h2>
-<p>En el ciclado sin peces se alimenta a las bacterias con amonio artificial, sin exponer a ningún animal a los picos tóxicos:</p>
-<ol>
-  <li><strong>Monta el acuario completo.</strong> Filtro funcionando las 24 horas, calentador a la temperatura objetivo, sustrato, decoración y plantas si las hay. El filtro no debe apagarse en ningún momento.</li>
-  <li><strong>Elige la fuente de amonio.</strong> La más precisa es el amoníaco puro (hidróxido de amonio) <strong>sin perfumes, colorantes ni surfactantes</strong>: lee la etiqueta, porque muchos limpiadores llevan aditivos que arruinan el acuario. La alternativa es dejar comida de peces en descomposición dentro de una media de red.</li>
-  <li><strong>Dosifica hasta 2-4 ppm.</strong> Añade la fuente poco a poco, espera una hora y mide con un <a href="/articulos/test-agua-acuario/">test de gotas para el agua del acuario</a> hasta alcanzar 2-4 ppm de amonio total.</li>
-  <li><strong>Mantén la dosis.</strong> Cuando el amonio baje cerca de cero, vuelve a dosificar una cantidad menor: sin amonio, la colonia no crece.</li>
-  <li><strong>Mide cada 2-3 días.</strong> Anota amonio, nitrito y nitrato: ver la curva descender ayuda a mantener la paciencia durante la espera.</li>
-  <li><strong>Verifica el final</strong> con la prueba que se describe más abajo antes de comprar los peces.</li>
-</ol>
+    <h2>Qué deberías ver en el test, por día</h2>
+    <table>
+      <thead>
+        <tr><th>Día</th><th>Amonio (ppm)</th><th>Nitrito (ppm)</th><th>Nitrato (ppm)</th><th>Acción</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>2–4 (tras dosificar)</td><td>0</td><td>0</td><td>Dosificar hasta 2–4 ppm</td></tr>
+        <tr><td>3</td><td>2–4</td><td>0</td><td>0</td><td>Medir y anotar</td></tr>
+        <tr><td>7</td><td>En descenso (1–2)</td><td>0–0,5</td><td>0</td><td>Esperar; reponer a 2 ppm si cae a 0</td></tr>
+        <tr><td>14</td><td>0–1</td><td>1–5 (pico)</td><td>0–10</td><td>Reponer amonio a 2 ppm</td></tr>
+        <tr><td>21</td><td>0</td><td>En descenso (0,5–2)</td><td>10–40</td><td>Seguir midiendo cada 2–3 días</td></tr>
+        <tr><td>28–42</td><td>0 en 24 h tras dosificar 2 ppm</td><td>0 en 24 h</td><td>20–80</td><td>Prueba final superada: cambio de agua y primeros peces</td></tr>
+      </tbody>
+    </table>
+    <p>El proceso completo suele tomar <strong>entre 4 y 8 semanas</strong>. Las bacterias trabajan mejor entre 25 y 28&nbsp;°C; un pH muy ácido, la falta de oxígeno o un filtro apagado durante horas lo alargan. Estos valores son orientativos: cada acuario tiene su ritmo, y lo que manda es el test, no el calendario.</p>
 
-<h2>Cronograma esperado semana a semana</h2>
-<p>El ciclo sigue un patrón bastante predecible. Esta tabla resume lo que suele ocurrir en cada fase:</p>
-<table>
-  <thead>
-    <tr><th>Semana</th><th>Qué está pasando</th><th>Qué muestra el test</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>El amonio dosificado se acumula; las bacterias aún son escasas.</td><td>Amonio alto (2-4 ppm), nitrito 0, nitrato 0.</td></tr>
-    <tr><td>2-3</td><td>Las bacterias que oxidan amonio se multiplican; el nitrito sube.</td><td>Amonio en descenso, nitrito en aumento.</td></tr>
-    <tr><td>3-5</td><td>El segundo grupo de bacterias gana terreno; el nitrito baja.</td><td>Nitrito en descenso, nitrato en aumento.</td></tr>
-    <tr><td>4-8</td><td>La colonia procesa la dosis diaria de amonio en 24 horas.</td><td>Amonio 0 y nitrito 0 en 24 h tras dosificar; nitrato alto.</td></tr>
-  </tbody>
-</table>
-<p>El proceso completo suele tomar <strong>entre 4 y 8 semanas</strong>. Las bacterias trabajan mejor entre 25 y 28 °C; un pH muy ácido, la falta de oxígeno o un filtro apagado durante horas lo alargan.</p>
+    <!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: in-article | Ver ADSENSE.md. -->
+    <div class="ad-slot" data-ad-slot="in-article" aria-hidden="true"></div>
 
-<h3>Cómo saber que el ciclado terminó</h3>
-<p>La prueba definitiva: dosifica amonio hasta 2-4 ppm y espera 24 horas. Si mides <strong>amonio en 0 y nitrito en 0</strong>, con nitrato presente, el ciclo está completo.</p>
-<p>Antes de introducir los peces, haz un <a href="/articulos/cambio-agua-acuario/">cambio parcial de agua</a> generoso para bajar el nitrato acumulado (ideal: por debajo de 20 ppm). Después, introduce los peces <strong>de forma gradual</strong>, unos pocos cada semana, para que la colonia se ajuste al aumento de carga.</p>
+    <h2>¿Cuánto dura realmente? Lo que alarga o acorta el ciclo</h2>
+    <p>La horquilla habitual es de <strong>4 a 8 semanas</strong>, pero no es un plazo fijo: depende de las condiciones del acuario. Estos son los factores que más pesan:</p>
+    <table>
+      <thead>
+        <tr><th>Factor</th><th>Lo acelera</th><th>Lo frena</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Temperatura</td><td>25–28&nbsp;°C, el rango óptimo de las nitrificantes</td><td>Por debajo de 20&nbsp;°C el crecimiento se ralentiza mucho</td></tr>
+        <tr><td>pH</td><td>Neutro o ligeramente alcalino (7.0–8.0)</td><td>Por debajo de 6.0 la nitrificación se frena drásticamente</td></tr>
+        <tr><td>Oxígeno</td><td>Buena aireación y flujo constante por el filtro</td><td>Filtro apagado o caudal muy bajo</td></tr>
+        <tr><td>Superficie filtrante</td><td>Material poroso abundante (canutillos, esponjas)</td><td>Filtro con poco material biológico</td></tr>
+        <tr><td>Material maduro</td><td>Esponjas o canutillos de un acuario estable</td><td>Empezar desde cero, sin inóculo</td></tr>
+        <tr><td>Cloro</td><td>Agua siempre acondicionada</td><td>Un solo cambio con agua sin acondicionar daña la colonia</td></tr>
+      </tbody>
+    </table>
+    <p>Un acuario a 27&nbsp;°C, con pH neutro y material filtrante maduro de otro acuario puede ciclarse en 2–3 semanas; el mismo acuario a 21&nbsp;°C, con pH ácido y sin inóculo, puede tardar más de 8. Por eso el calendario orientativo de la tabla anterior no sustituye al test: el día que el test marca 0 y 0 tras dosificar 2 ppm, el ciclo está hecho, toque la semana que toque.</p>
 
-<h2>Ciclado con peces: por qué conviene evitarlo</h2>
-<p>Consiste en usar a los propios peces como fuente de amonio. El problema es evidente: durante semanas quedan expuestos a niveles de amonio y nitrito que les queman las branquias y debilitan su sistema inmune. No es un método recomendable.</p>
-<p>Si ya metiste peces sin ciclar, aún puedes reducir los daños:</p>
-<ul>
-  <li>Cambia un <strong>25-50 % del agua</strong> cada vez que el amonio o el nitrito superen 0,25 ppm.</li>
-  <li><strong>No añadas más peces</strong> ni sobrealimentes: la comida no consumida es más amonio.</li>
-  <li>Usa un acondicionador que <strong>neutralice el amonio temporalmente</strong>: es un parche, no elimina el compuesto.</li>
-  <li>Mantén buena oxigenación y no laves el material filtrante.</li>
-</ul>
-<p>Con disciplina en los cambios de agua, la mayoría de los acuarios superan esta fase en unas semanas, pero el estrés para los peces es real.</p>
+    <h2>El ciclado se estancó: lee el test y actúa</h2>
+    <p>Si los tests dejan de moverse una o dos semanas, la lectura misma señala la causa. Esta tabla cubre los casos habituales:</p>
+    <table>
+      <thead>
+        <tr><th>Lo que muestra el test</th><th>Causa probable</th><th>Qué hacer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Amonio clavado en 2–4 ppm durante más de 2 semanas</td><td>pH por debajo de 6: la nitrificación se frena drásticamente</td><td>Revisa los <a href="/articulos/parametros-agua-acuario/">parámetros del agua</a> y corrige con cambios parciales</td></tr>
+        <tr><td>Nada se mueve desde el día 1</td><td>Cloro o cloramina sin neutralizar en el agua nueva</td><td>Acondiciona siempre el agua del grifo antes de añadirla</td></tr>
+        <tr><td>El nitrito no baja tras 2 semanas en pico</td><td>Falta de "comida": dejaste de dosificar amonio</td><td>Retoma la dosis objetivo de 2 ppm</td></tr>
+        <tr><td>Todo empeora de golpe</td><td>Medicamentos o antibióticos en el agua, que diezman la colonia</td><td>Cambio parcial grande y carbón activo temporal; retoma la dosificación</td></tr>
+        <tr><td>Amonio y nitrito suben tras ir bien</td><td>Filtro apagado durante horas: sin oxígeno ni flujo, las bacterias mueren rápido</td><td>Restablece el flujo, no laves el material filtrante y retoma las mediciones</td></tr>
+      </tbody>
+    </table>
+    <p>Corregida la causa, el proceso suele retomarse en pocos días: la colonia es resistente si tiene amonio, oxígeno y agua sin tóxicos. Las plantas ayudan como apoyo durante el ciclado —absorben amonio y nitrato y amortiguan los picos—, pero no sustituyen a la colonia bacteriana del filtro. Y el agua de otro acuario apenas acelera nada: las bacterias viven adheridas a superficies, no flotando, así que el agua madura traslada muy poca colonia. Lo que realmente acelera el proceso es el material filtrante o parte del sustrato de un acuario estable.</p>
 
-<h2>Cómo acelerar el ciclado (sin magia)</h2>
-<p>No hay atajos que completen el ciclo en 24 horas, pero sí formas legítimas de acortarlo:</p>
-<ul>
-  <li><strong>Material filtrante maduro.</strong> Esponjas o canutillos de un acuario sano trasladan una colonia viva ya formada: es el método más rápido y fiable. Mantenlos húmedos en agua del propio acuario durante el traslado.</li>
-  <li><strong>Cultivos de bacterias comerciales.</strong> Pueden acortar el proceso, pero los resultados varían según el producto y su almacenamiento. Ayudan; no hacen magia. Verifica siempre con tests antes de meter peces.</li>
-  <li><strong>Condiciones óptimas.</strong> Temperatura entre 25 y 28 °C, pH neutro o ligeramente alcalino y buena aireación favorecen el crecimiento bacteriano.</li>
-</ul>
-<p>Lo que <strong>no</strong> funciona: dosificar más amonio del necesario, apagar el filtro por la noche o "dejar reposar el agua" sin fuente de amonio: sin amonio no hay nada que colonizar.</p>
+    <h2>Ya metiste peces sin ciclar: plan de rescate</h2>
+    <p>El ciclado con peces consiste en usar a los propios peces como fuente de amonio. El problema es evidente: durante semanas quedan expuestos a niveles de amonio y nitrito que les queman las branquias y debilitan su sistema inmune. No es un método recomendable, pero si ya metiste peces sin ciclar, aún puedes reducir los daños:</p>
+    <ul>
+      <li>Cambia un <strong>25–50&nbsp;% del agua</strong> cada vez que el amonio o el nitrito superen 0,25 ppm.</li>
+      <li><strong>No añadas más peces</strong> ni sobrealimentes: la comida no consumida es más amonio.</li>
+      <li>Usa un acondicionador que <strong>neutralice el amonio temporalmente</strong>: es un parche, no elimina el compuesto.</li>
+      <li>Mantén buena oxigenación y no laves el material filtrante.</li>
+    </ul>
+    <p>Con disciplina en los cambios de agua, la mayoría de los acuarios superan esta fase en unas semanas, pero el estrés para los peces es real. Mide a diario hasta que el amonio y el nitrito marquen cero de forma estable.</p>
 
-<h2>El ciclado se estancó: causas comunes</h2>
-<p>Si los tests dejan de moverse una o dos semanas, revisa estas causas habituales:</p>
-<ul>
-  <li><strong>pH muy bajo.</strong> Por debajo de 6, la nitrificación se frena drásticamente. Revisa los <a href="/articulos/parametros-agua-acuario/">parámetros del agua</a> y corrige con cambios parciales.</li>
-  <li><strong>Cloro o cloramina sin neutralizar.</strong> El agua del grifo sin acondicionar mata bacterias con cada cambio. Acondiciona siempre el agua nueva.</li>
-  <li><strong>Medicamentos o antibióticos</strong> en el agua, que pueden diezmar la colonia bacteriana.</li>
-  <li><strong>Falta de "comida".</strong> Si dejaste de dosificar amonio, la colonia deja de crecer: retoma la dosis objetivo.</li>
-  <li><strong>Filtro apagado</strong> durante horas: sin oxígeno ni flujo, las bacterias nitrificantes mueren rápido.</li>
-</ul>
-<p>Corregida la causa, el proceso suele retomarse en pocos días: la colonia es resistente si tiene amonio, oxígeno y agua sin tóxicos.</p>
+    <h2>Cómo acelerar el ciclado (sin magia)</h2>
+    <p>No hay atajos que completen el ciclo en 24 horas, pero sí formas legítimas de acortarlo:</p>
+    <ul>
+      <li><strong>Material filtrante maduro.</strong> Esponjas o canutillos de un acuario sano trasladan una colonia viva ya formada: es el método más rápido y fiable. Mantenlos húmedos en agua del propio acuario durante el traslado.</li>
+      <li><strong>Cultivos de bacterias comerciales.</strong> Pueden acortar el proceso, pero los resultados varían según el producto y su almacenamiento. Ayudan; no hacen magia. Verifica siempre con tests antes de meter peces.</li>
+      <li><strong>Condiciones óptimas.</strong> Temperatura entre 25 y 28&nbsp;°C, pH neutro o ligeramente alcalino y buena aireación favorecen el crecimiento bacteriano.</li>
+    </ul>
+    <p>Lo que <strong>no</strong> funciona: dosificar más amonio del necesario, apagar el filtro por la noche o "dejar reposar el agua" sin fuente de amonio: sin amonio no hay nada que colonizar.</p>
 
-<h2>Preguntas frecuentes</h2>
-<h3>¿Cuánto dura el ciclado de un acuario?</h3>
-<p>Entre 4 y 8 semanas en condiciones normales. La temperatura (ideal 25-28 °C), el pH y la superficie del material filtrante influyen en la velocidad; el material filtrante maduro de otro acuario puede acortarlo notablemente.</p>
-<h3>¿Sirve usar agua de otro acuario para ciclar más rápido?</h3>
-<p>Apenas: las bacterias viven adheridas a superficies, no flotando en el agua, así que el agua madura traslada muy poca colonia. Lo que acelera el proceso es el material filtrante o el sustrato de un acuario estable.</p>
-<h3>¿Las plantas ayudan durante el ciclado?</h3>
-<p>Sí, como apoyo: absorben amonio y nitrato y amortiguan los picos, pero no sustituyen a la colonia bacteriana del filtro.</p>
-<h3>¿El test de tiras sirve para controlar el ciclado?</h3>
-<p>Es menos preciso que el de gotas, justo en los rangos bajos donde se toman las decisiones importantes. Para el ciclado conviene el test de gotas.</p>
-<h3>¿Cuándo hago el primer cambio de agua?</h3>
-<p>Al terminar el ciclado, para bajar el nitrato acumulado antes de introducir los peces. A partir de ahí, los cambios parciales semanales forman parte del mantenimiento habitual del acuario.</p>
+    <h2>Errores de medición que falsean el ciclado</h2>
+    <p>Un test mal usado da lecturas que no existen y decisiones equivocadas. Los errores más frecuentes:</p>
+    <ul>
+      <li><strong>Medir justo después de dosificar.</strong> Espera al menos una hora tras añadir amonio para que se mezcle por todo el acuario.</li>
+      <li><strong>No agitar los reactivos.</strong> Algunos frascos de nitrato exigen agitar con fuerza un tiempo exacto; sin hacerlo, la lectura sale baja y parece que el ciclo va mejor de lo que va.</li>
+      <li><strong>Leer con mala luz.</strong> Compara el color del tubo con la carta bajo luz blanca diurna, no bajo la luz azulada del acuario.</li>
+      <li><strong>Usar reactivos caducados.</strong> Un test de gotas abierto hace años pierde fiabilidad; revisa la fecha y sustitúyelo si las lecturas dejan de tener sentido.</li>
+      <li><strong>Medir solo el amonio.</strong> El amonio a cero no significa ciclo completo: el nitrito puede estar en pleno pico. Mide siempre los tres valores juntos.</li>
+      <li><strong>Confiar en las tiras para decidir.</strong> Las tiras sirven para un vistazo rápido, pero su precisión en los rangos bajos de amonio y nitrito —justo donde se decide si meter peces— es insuficiente. La <a href="/articulos/test-agua-acuario/">guía de test de agua</a> explica las diferencias entre tiras y gotas.</li>
+    </ul>
+    <p>Ante una lectura que no encaja con lo esperado, repite la medición antes de actuar: un segundo test cuesta un minuto y evita un cambio de agua innecesario o, peor, meter peces en un acuario que aún no está listo.</p>
 
-    <aside class="author-box">
+    <h2>Después del ciclado: el primer cambio de agua</h2>
+    <p>Al terminar el ciclado, haz un cambio parcial generoso para bajar el nitrato acumulado antes de introducir los peces. A partir de ahí, los cambios parciales semanales forman parte del mantenimiento habitual del acuario: la <a href="/articulos/cambio-agua-acuario/">guía de cambio de agua</a> explica cantidades y frecuencia según el tamaño y la carga del acuario. Y recuerda la regla de oro de aquí en adelante: el material filtrante se enjuaga solo con agua del propio acuario, nunca con agua del grifo.</p>
+
+<aside class="author-box">
       <p><strong>Equipo AquaPez</strong></p>
       <p>Somos aficionados a la acuariofilia que investigamos y verificamos cada guía para compartir lo que realmente funciona, sin tecnicismos innecesarios.</p>
     </aside>

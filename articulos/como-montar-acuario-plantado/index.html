@@ -30,7 +30,7 @@
   "author": {"@type": "Organization", "name": "AquaPez"},
   "publisher": {"@type": "Organization", "name": "AquaPez"},
   "datePublished": "2026-11-01",
-  "dateModified": "2026-11-01",
+  "dateModified": "2026-11-16",
   "inLanguage": "es",
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aquapez.com/articulos/como-montar-acuario-plantado/"}
 }
@@ -53,35 +53,28 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El sustrato nutritivo es obligatorio para un acuario plantado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No es obligatorio, pero facilita mucho el arranque. Con sustrato inerte también se mantiene un plantado sano si se abona la columna de agua de forma constante con fertilizantes líquidos. El nutritivo perdona mejor los descuidos de abonado durante los primeros meses, a cambio de liberar amonio al inicio y agotarse con el tiempo."
-      }
+      "name": "¿Cuándo puedo meter los primeros peces en un acuario plantado?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Cuando el ciclado esté completo: amonio y nitrito en cero 24 horas después de dosificar 2 ppm de amonio. Suele ser entre la cuarta y la octava semana. Meterlos antes expone a los peces a picos tóxicos y alarga el ciclado."}
     },
     {
       "@type": "Question",
-      "name": "¿Cuántas horas de luz necesita un plantado al principio?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Entre 6 y 8 horas diarias, con temporizador y horario fijo. Es preferible empezar corto y subir de forma gradual hasta 8 o 10 horas cuando las plantas muestren crecimiento nuevo y sostenido. Aumentar la luz no soluciona unas plantas estancadas: si no crecen, el problema suele estar en los nutrientes o el CO2."
-      }
+      "name": "¿Las diatomeas marrones del primer mes son peligrosas?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Son normales en las primeras semanas y suelen remitir solas cuando el sistema madura. Se retiran con cambios de agua frecuentes y plantas de crecimiento rápido, no con alguicidas."}
     },
     {
       "@type": "Question",
-      "name": "¿Por qué me salen algas en el primer mes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Porque es la fase más inestable: hay luz y nutrientes libres mientras las plantas aún no han establecido su ritmo de consumo. Las diatomeas marrones de las primeras semanas son normales y suelen remitir solas. La respuesta correcta es plantar denso desde el día uno, mantener el fotoperiodo corto y hacer cambios de agua frecuentes, no recurrir a alguicidas como primera medida."
-      }
+      "name": "¿Cuándo empiezo a abonar en serio un acuario plantado?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Con sustrato nutritivo nuevo, espera a ver crecimiento activo —hacia la tercera o cuarta semana— y empieza suave. Abonar desde el día uno, con nutrientes libres y plantas sin raíces, alimenta sobre todo a las algas."}
     },
     {
       "@type": "Question",
-      "name": "¿Se puede tener un acuario plantado sin CO2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, es el enfoque low-tech: plantas poco exigentes como Anubias, Cryptocoryne, Vallisneria o helechos crecen bien sin CO2 añadido, con luz moderada y abonado suave. El crecimiento será más lento y algunas especies exigentes quedarán fuera, pero el mantenimiento es más sencillo y el sistema perdona más errores."
-      }
+      "name": "¿Puedo añadir más plantas después de la primera semana?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí, y es recomendable si el plantado quedó poco denso: cada planta nueva es competencia extra contra las algas. Planta en los huecos sin remover el sustrato más de lo necesario."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿El sustrato nutritivo se agota?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí, su carga de nutrientes se agota en uno o dos años según la marca y la densidad de plantas. Cuando eso pasa, el abonado líquido y las pastillas de abono para las raíces toman el relevo; no hace falta desmontar el acuario."}
     }
   ]
 }
@@ -125,79 +118,101 @@
   <article>
     <h1>Cómo montar un acuario plantado desde cero</h1>
     <p class="article-meta">
-      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot;
-      <span>Lectura: 8 min</span> &middot;
+      <time datetime="2026-11-01">1 de noviembre de 2026</time> &middot; <span>Actualizado: <time datetime="2026-11-16">16 de noviembre de 2026</time></span> &middot;
+      <span>Lectura: 11 min</span> &middot;
       Categoría: <a href="/montaje/">Montaje</a>
     </p>
     <img src="/assets/img/como-montar-acuario-plantado.webp" srcset="/assets/img/como-montar-acuario-plantado-800.webp 800w, /assets/img/como-montar-acuario-plantado.webp 1600w" sizes="(max-width: 640px) 100vw, 800px" alt="Manos plantando tallos en sustrato nutritivo de un acuario plantado" fetchpriority="high" width="1200" height="800">
 
-<p class="lead">Un acuario plantado no es un acuario normal al que se le añaden plantas: es un ecosistema donde las plantas son las protagonistas y todo lo demás —luz, sustrato, nutrientes, CO2— se decide en función de ellas. Montarlo desde cero exige un orden de trabajo distinto al de un acuario solo de peces, y la mayoría de los fracasos vienen de saltarse ese orden. Esta guía explica el método completo, del sustrato vacío al primer mes de vida.</p>
+<p class="lead">Un acuario plantado no se monta como un acuario de peces al que luego se le añaden plantas: el orden es sustrato, hardscape, plantado denso el mismo día, llenado suave y luz corta. Saltarse ese orden es la causa más frecuente de fracaso. Esta guía es el calendario real del proyecto: qué hacer en la semana 1, qué esperar en las semanas 2–4 y cómo se cierra el primer mes, con los números de cada fase.</p>
 
-<h2>Qué hace diferente a un acuario plantado</h2>
-<p>En un acuario convencional, el objetivo es mantener el agua limpia para los peces; las plantas, si las hay, son decoración. En un plantado, el objetivo se invierte: hay que mantener las plantas creciendo de forma sana, porque son ellas las que estabilizan el sistema. Unas plantas en crecimiento activo consumen amonio, nitratos y fosfatos, compiten con las algas y oxigenan el agua durante el día.</p>
-<p>Esa inversión de prioridades lo cambia todo: la luz pasa a ser el motor del sistema, el sustrato se convierte en suelo fértil, y el abonado y el CO2 entran en la ecuación. Por eso no funciona montar un acuario de peces y luego intentar "añadirle plantas".</p>
+    <h2>Antes de la semana 1: dos caminos, una decisión</h2>
+    <p>Todo plantado es low-tech o high-tech, y la decisión se toma antes de comprar nada, porque cambia el sustrato, la luz, el CO2 y el presupuesto. Ninguno es mejor en abstracto: el low-tech es más barato e indulgente; el high-tech permite tapizantes exigentes y tallos rojos, a cambio de más disciplina.</p>
+    <table>
+      <thead>
+        <tr><th>Aspecto</th><th>Low-tech (sin CO2)</th><th>High-tech (con CO2)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Luz</td><td>Moderada (15–25 lm/L)</td><td>Media-alta (más de 40 lm/L)</td></tr>
+        <tr><td>Fotoperiodo inicial</td><td>6–8 horas</td><td>6–8 horas</td></tr>
+        <tr><td>CO2</td><td>No añadido</td><td>Presurizado con difusor (20–30 mg/L)</td></tr>
+        <tr><td>Sustrato</td><td>Inerte + abonado líquido, o nutritivo</td><td>Nutritivo recomendado</td></tr>
+        <tr><td>Cambios de agua (primer mes)</td><td>Semanales del 20–30&nbsp;%</td><td>2× por semana del 30–50&nbsp;%</td></tr>
+        <tr><td>Plantas objetivo</td><td>Anubias, Cryptocoryne, Vallisneria, helechos</td><td>Tapizantes exigentes, tallos rojos</td></tr>
+        <tr><td>Dificultad y coste</td><td>Bajos</td><td>Medios-altos</td></tr>
+      </tbody>
+    </table>
+    <p>En un acuario convencional, el objetivo es mantener el agua limpia para los peces; las plantas, si las hay, son decoración. En un plantado, el objetivo se invierte: hay que mantener las plantas creciendo de forma sana, porque son ellas las que estabilizan el sistema. Unas plantas en crecimiento activo consumen amonio, nitratos y fosfatos, compiten con las algas y oxigenan el agua durante el día. Por eso no funciona montar un acuario de peces y luego intentar "añadirle plantas".</p>
 
-<h2>El sustrato: la base de todo el proyecto</h2>
-<p>Todo acuario plantado empieza por el suelo, y aquí hay dos caminos: el sustrato nutritivo, que aporta nutrientes a las raíces desde el primer día, o el sustrato inerte (arena o grava), que no aporta nada y obliga a abonar la columna de agua desde el inicio. Ninguno es mejor en abstracto: el nutritivo acelera el arranque y sostiene plantas exigentes, pero libera amonio las primeras semanas y suele agotarse en uno o dos años; el inerte es más estable y económico, pero exige un abonado líquido constante y disciplinado.</p>
-<p>Para un primer plantado, el nutritivo comercial es la opción más indulgente: perdona errores de abonado durante los primeros meses. La <a href="/articulos/sustrato-acuario-plantado/">guía de sustratos para acuario plantado</a> compara tipos y grosores. En cualquier caso, usa de 3 a 5 cm, con más profundidad atrás para los tallos.</p>
+    <h2>Semana 1: montaje y arranque</h2>
+    <p>La primera semana se hace todo el trabajo físico. El orden es innegociable: primero el sustrato, luego el hardscape, después las plantas, y por último el agua, la luz y el filtro. Saltarse este orden es la causa más frecuente de plantados que nunca arrancan.</p>
+    <h3>Día 1: el sustrato, la base de todo el proyecto</h3>
+    <p>Hay dos caminos: el sustrato nutritivo, que aporta nutrientes a las raíces desde el primer día, o el sustrato inerte (arena o grava), que no aporta nada y obliga a abonar la columna de agua desde el inicio. El nutritivo acelera el arranque y sostiene plantas exigentes, pero libera amonio las primeras semanas y suele agotarse en uno o dos años; el inerte es más estable y económico, pero exige un abonado líquido constante y disciplinado.</p>
+    <p>Para un primer plantado, el nutritivo comercial es la opción más indulgente: perdona errores de abonado durante los primeros meses. La <a href="/articulos/sustrato-acuario-plantado/">guía de sustratos para acuario plantado</a> compara tipos y grosores. En cualquier caso, usa de 3 a 5 cm, con más profundidad atrás para los tallos.</p>
+    <h3>Día 1: hardscape y plantado denso, el mismo día</h3>
+    <p>Rocas y troncos definen la estructura visual, y una vez plantado, moverlos es casi imposible sin destrozar raíces. Colócalos sobre el sustrato en los puntos focales planeados, en grupos impares y con la base ligeramente enterrada. Fija ya las epífitas —Anubias, helechos de Java, Bucephalandra— al hardscape con hilo o pegamento específico: su rizoma nunca debe enterrarse, porque se pudre. Con el hardscape cerrado verás los espacios libres y calcularás cuántas plantas necesitas.</p>
+    <p>Planta denso desde el primer día. La razón es biológica: en un acuario nuevo hay nutrientes libres y luz, la combinación perfecta para las algas. Un plantado denso, con abundantes tallos de crecimiento rápido, consume esos nutrientes antes de que las algas los aprovechen. Plantar poco "para que crezca" es el error más caro del principiante: en dos semanas el acuario se llena de algas y la recuperación cuesta meses. Compra más plantas de las que crees necesitar, sobre todo tallos rápidos que luego podrás podar o sustituir cuando el sistema madure.</p>
+    <h3>Día 1: llenado, luz y CO2</h3>
+    <p>Un chorro directo levanta el sustrato, desentierra las plantas pequeñas y enturbia el agua durante días. Apoya un plato hondo o una bolsa de plástico sobre el sustrato y vierte el agua encima, despacio. Toda el agua del grifo debe llevar acondicionador para neutralizar cloro y cloramina. Cierta turbidez inicial con sustrato nutritivo es normal; el filtro la aclara en uno o dos días. Llena hasta arriba desde el principio: un nivel bajo concentra nutrientes y favorece las algas.</p>
+    <p>Al inicio, con pocas raíces establecidas y nutrientes libres, un fotoperiodo largo invita a las algas. La pauta conservadora es de <strong>6 a 8 horas diarias</strong>, con temporizador y horario fijo. Un plantado de plantas poco exigentes (Anubias, Cryptocoryne, Vallisneria, helechos) prospera sin CO2 añadido, con luz moderada y abonado suave: es el enfoque low-tech. El CO2 presurizado se vuelve necesario con tapizantes exigentes, tallos rojos o crecimiento denso y rápido. La <a href="/articulos/co2-acuario-plantado/">guía de CO2 para acuarios plantados</a> explica los sistemas y su dimensionado. El "carbono líquido" no sustituye al CO2 gaseoso: es un complemento.</p>
+    <h3>La alternativa: dry start o plantado inundado</h3>
+    <p>Hay dos formas de arrancar un plantado. El método inundado —plantar y llenar de agua desde el día uno— es el estándar: más simple, compatible con todas las plantas y con el ciclado normal del acuario. Su punto débil es que las tapizantes tardan semanas en cerrar con el acuario lleno.</p>
+    <p>El dry start consiste en plantar las tapizantes sobre sustrato húmedo, sin llenar, manteniendo humedad alta durante 4 a 8 semanas. Crecen emergidas, con CO2 ilimitado del aire, y forman una alfombra densa antes del llenado. Solo sirve para especies que toleran la fase emergida y exige constancia; para un primer plantado, el método inundado es la recomendación conservadora.</p>
 
-<!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: in-article | Ver ADSENSE.md. -->
-<div class="ad-slot" data-ad-slot="in-article" aria-hidden="true"></div>
+    <!-- PEGAR CÓDIGO ADSENSE AQUÍ — slot: in-article | Ver ADSENSE.md. -->
+    <div class="ad-slot" data-ad-slot="in-article" aria-hidden="true"></div>
 
-<h2>Hardscape y plantado denso desde el día 1</h2>
-<p>El montaje del plantado tiene un orden innegociable: primero se cierra el paisaje duro y después se planta, todo el mismo día y con densidad alta. Saltarse este orden es la causa más frecuente de plantados que nunca arrancan.</p>
-<h3>El hardscape se coloca primero</h3>
-<p>Rocas y troncos definen la estructura visual, y una vez plantado, moverlos es casi imposible sin destrozar raíces. Colócalos sobre el sustrato en los puntos focales planeados, en grupos impares y con la base ligeramente enterrada. Fija ya las epífitas —Anubias, helechos de Java, Bucephalandra— al hardscape con hilo o pegamento específico: su rizoma nunca debe enterrarse, porque se pudre. Con el hardscape cerrado verás los espacios libres y calcularás cuántas plantas necesitas.</p>
-<h3>Planta denso desde el primer día</h3>
-<p>La razón es biológica: en un acuario nuevo hay nutrientes libres y luz, la combinación perfecta para las algas. Un plantado denso, con abundantes tallos de crecimiento rápido, consume esos nutrientes antes de que las algas los aprovechen. Plantar poco "para que crezca" es el error más caro del principiante: en dos semanas el acuario se llena de algas y la recuperación cuesta meses. Compra más plantas de las que crees necesitar, sobre todo tallos rápidos que luego podrás podar o sustituir cuando el sistema madure.</p>
+    <h2>Semanas 2–4: ciclado, cambios de agua y primeras algas</h2>
+    <p>La segunda fase es la más inestable: hay luz y nutrientes libres mientras las plantas aún no han establecido su ritmo de consumo. El trabajo de estas tres semanas es medir, cambiar agua y no tocar nada más.</p>
+    <ul>
+      <li><strong>Cambios de agua frecuentes.</strong> Si usaste sustrato nutritivo, liberará amonio durante las primeras semanas: responde con cambios de agua dos veces por semana, del 30 al 50&nbsp;%, hasta que los test marquen cero de forma estable. Con sustrato inerte basta un cambio semanal del 20–30&nbsp;%.</li>
+      <li><strong>Ciclado en marcha.</strong> El ciclo del nitrógeno (amonio → nitrito → nitrato) debe completarse antes de introducir peces, lo que lleva de 4 a 8 semanas. Mide amonio, nitrito y nitrato con test de gotas cada 2–3 días y anota los valores: la <a href="/articulos/ciclado-acuario-guia-completa/">guía de ciclado</a> detalla qué debe marcar el test cada día.</li>
+      <li><strong>Abonado suave.</strong> Con sustrato nutritivo nuevo basta un abonado líquido ligero, o ninguno las dos primeras semanas; auméntalo solo con crecimiento activo. Abonar en exceso "por si acaso" no acelera nada y alimenta las algas.</li>
+      <li><strong>Algas: espera las diatomeas.</strong> Las diatomeas marrones de las primeras semanas son normales y suelen remitir solas al madurar el sistema. Responde ajustando la causa —menos luz, más cambios de agua, más plantas rápidas—, no con químicos. Nunca aumentes la luz para "compensar" plantas estancadas: si no crecen con 8 horas, el problema está en los nutrientes o el CO2, y más luz solo acelera las algas.</li>
+      <li><strong>Luz: sube solo con crecimiento nuevo.</strong> Hacia la tercera o cuarta semana, cuando veas crecimiento nuevo y sostenido, sube gradualmente hasta 8 o 10 horas.</li>
+    </ul>
+    <p>La <a href="/articulos/parametros-agua-plantas/">guía de parámetros del agua para plantas</a> detalla los valores objetivo de esta fase. Y un aviso: lavar el material filtrante con agua del grifo mata las bacterias; enjuágalo solo con agua del acuario.</p>
 
-<h2>Llenado, luz y CO2: el arranque controlado</h2>
-<p>Con el plantado terminado, tres variables deciden si el arranque es limpio o un brote de algas: cómo entra el agua, cuánta luz reciben las plantas y si hay CO2 disponible. Las tres se configuran de forma conservadora el primer día.</p>
-<h3>El llenado sin desarmar el plantado</h3>
-<p>Un chorro directo levanta el sustrato, desentierra las plantas pequeñas y enturbia el agua durante días. Apoya un plato hondo o una bolsa de plástico sobre el sustrato y vierte el agua encima, despacio. Toda el agua del grifo debe llevar acondicionador para neutralizar cloro y cloramina. Cierta turbidez inicial con sustrato nutritivo es normal; el filtro la aclara en uno o dos días. Llena hasta arriba desde el principio: un nivel bajo concentra nutrientes y favorece las algas.</p>
-<h3>Luz: empieza con un fotoperiodo corto</h3>
-<p>Al inicio, con pocas raíces establecidas y nutrientes libres, un fotoperiodo largo invita a las algas. La pauta conservadora es de 6 a 8 horas diarias, con temporizador y horario fijo. Cuando veas crecimiento nuevo y sostenido —hacia la tercera o cuarta semana— sube gradualmente hasta 8 o 10 horas. Nunca aumentes la luz para "compensar" plantas estancadas: si no crecen con 8 horas, el problema está en los nutrientes o el CO2, y más luz solo acelera las algas.</p>
-<h3>CO2: cuándo lo necesitas y cuándo no</h3>
-<p>Un plantado de plantas poco exigentes (Anubias, Cryptocoryne, Vallisneria, helechos) prospera sin CO2 añadido, con luz moderada y abonado suave: es el enfoque low-tech, más económico e indulgente. El CO2 presurizado se vuelve necesario con tapizantes exigentes, tallos rojos o crecimiento denso y rápido: es el enfoque high-tech, que exige más disciplina en abonado y cambios de agua porque acelera todo el sistema. La <a href="/articulos/co2-acuario-plantado/">guía de CO2 para acuarios plantados</a> explica los sistemas y su dimensionado. El "carbono líquido" no sustituye al CO2 gaseoso: es un complemento.</p>
+    <h2>Primer mes: el sistema madura y llegan los primeros peces</h2>
+    <p>Alrededor de la cuarta semana el acuario cambia de carácter: las plantas muestran crecimiento nuevo, las diatomeas remiten y los test empiezan a estabilizarse. Es el momento de cerrar el montaje:</p>
+    <ul>
+      <li><strong>Confirma el ciclado antes de comprar peces.</strong> La prueba definitiva: dosifica amonio hasta 2 ppm y espera 24 horas; si el amonio y el nitrito marcan cero, el ciclo está completo. Haz un cambio parcial generoso para bajar el nitrato acumulado por debajo de 20 ppm.</li>
+      <li><strong>Introduce los peces poco a poco.</strong> Unos pocos cada semana, para que la colonia bacteriana se ajuste al aumento de carga. Antes de comprar, calcula cuántos peces caben en tu volumen con la <a href="/herramientas/calculadora-de-poblacion/">calculadora de población</a>: un plantado sobrepoblado el primer mes es una invitación a las algas.</li>
+      <li><strong>Primera poda.</strong> Los tallos rápidos plantados el día 1 ya habrán crecido: poda las puntas y replanta los esquejes en los huecos. Es el momento de sustituir las plantas "de arranque" por las definitivas si el diseño lo pide.</li>
+      <li><strong>Fotoperiodo definitivo.</strong> Con crecimiento activo y sostenido, fija el fotoperiodo en 8–10 horas con temporizador y horario fijo. A partir de aquí, la luz ya no se toca sin motivo.</li>
+      <li><strong>Abonado regular.</strong> Con el sustrato asentado y las plantas creciendo, pasa a un abonado líquido regular según la demanda: poco y constante vale más que mucho de golpe.</li>
+    </ul>
+    <p>Si a final del primer mes las plantas crecen, el agua está clara y los test marcan amonio y nitrito en cero, el montaje está hecho. Lo que viene después es mantenimiento, no construcción.</p>
 
-<h2>Dry start o plantado inundado: dos caminos</h2>
-<p>Hay dos formas de arrancar un plantado. El método inundado —plantar y llenar de agua desde el día uno— es el estándar: más simple, compatible con todas las plantas y con el ciclado normal del acuario. Su punto débil es que las tapizantes tardan semanas en cerrar con el acuario lleno.</p>
-<p>El dry start consiste en plantar las tapizantes sobre sustrato húmedo, sin llenar, manteniendo humedad alta durante 4 a 8 semanas. Crecen emergidas, con CO2 ilimitado del aire, y forman una alfombra densa antes del llenado. Solo sirve para especies que toleran la fase emergida y exige constancia; para un primer plantado, el método inundado es la recomendación conservadora.</p>
+    <p>Para los primeros peces, elige especies resistentes y pacíficas, compatibles con los parámetros de tu agua: en un plantado low-tech con agua neutra, un grupo de tetras neón o de corydoras es una primera población sensata; en agua dura y alcalina, los vivíparos como guppys o platys encajan mejor. Evita estrenar el acuario con especies delicadas o territoriales: el sistema aún es joven y cualquier problema de agua golpea primero a los peces más sensibles. Observa a los primeros habitantes a diario durante dos semanas antes de añadir el siguiente grupo.</p>
 
-<h2>El primer mes: cambios frecuentes y abonado suave</h2>
-<p>El primer mes define el futuro del plantado. Si usaste sustrato nutritivo, liberará amonio durante las primeras semanas: responde con cambios de agua frecuentes —dos veces por semana, del 30 al 50 %— hasta que los test marquen cero de forma estable. Este es también el periodo del ciclado: el ciclo del nitrógeno (amonio → nitrito → nitrato) debe completarse antes de introducir peces, lo que lleva de 4 a 8 semanas.</p>
-<p>El abonado empieza suave: con sustrato nutritivo nuevo basta un abonado líquido ligero, o ninguno las dos primeras semanas; auméntalo solo con crecimiento activo. Espera algas: las diatomeas marrones iniciales suelen remitir solas al madurar el sistema. Responde ajustando la causa —menos luz, más cambios de agua, más plantas rápidas—, no con químicos. La <a href="/articulos/parametros-agua-plantas/">guía de parámetros del agua para plantas</a> detalla los valores objetivo.</p>
-<table>
-<thead>
-<tr><th>Aspecto</th><th>Low-tech (sin CO2)</th><th>High-tech (con CO2)</th></tr>
-</thead>
-<tbody>
-<tr><td>Luz</td><td>Moderada</td><td>Media-alta</td></tr>
-<tr><td>Fotoperiodo inicial</td><td>6–8 horas</td><td>6–8 horas</td></tr>
-<tr><td>CO2</td><td>No añadido</td><td>Presurizado con difusor</td></tr>
-<tr><td>Sustrato</td><td>Inerte + abonado líquido, o nutritivo</td><td>Nutritivo recomendado</td></tr>
-<tr><td>Cambios de agua (primer mes)</td><td>Semanales del 20–30 %</td><td>2× por semana del 30–50 %</td></tr>
-<tr><td>Plantas objetivo</td><td>Anubias, Cryptocoryne, Vallisneria, helechos</td><td>Tapizantes exigentes, tallos rojos</td></tr>
-<tr><td>Dificultad y coste</td><td>Bajos</td><td>Medios-altos</td></tr>
-</tbody>
-</table>
+    <h2>Mes 2 en adelante: la rutina que mantiene el plantado</h2>
+    <p>Un plantado maduro premia la constancia y castiga los cambios bruscos. La rutina semanal es corta:</p>
+    <ul>
+      <li><strong>Cambio de agua semanal del 25–30&nbsp;%</strong> (en high-tech, dos cambios más pequeños si la carga lo pide), con agua acondicionada a la misma temperatura.</li>
+      <li><strong>Poda semanal de tallos</strong> para que la luz llegue a las plantas bajas; replanta o retira los esquejes.</li>
+      <li><strong>Abonado líquido regular</strong>, ajustado a la velocidad de crecimiento real, no a la del prospecto.</li>
+      <li><strong>Limpieza del filtro</strong> solo con agua del propio acuario, y revisión del difusor de CO2, que se obstruye con algas.</li>
+      <li><strong>Observación:</strong> hojas nuevas pálidas, agujeros o crecimiento raquítico son carencias, no mala suerte. Un ajuste cada vez y una semana de observación antes del siguiente cambio.</li>
+    </ul>
 
-<h2>Errores típicos del acuario plantado</h2>
-<p>La mayoría de los plantados que fracasan lo hacen por los mismos motivos, todos evitables. El primero es empezar con demasiada luz y demasiadas horas, que dispara las algas antes de que las plantas arranquen. El segundo es plantar poco el primer día, dejando nutrientes libres para las algas. El tercero es abonar en exceso "por si acaso": con sustrato nutritivo nuevo, más abono no acelera nada y alimenta las algas.</p>
-<p>Otros clásicos: lavar el material filtrante con agua del grifo —el cloro mata las bacterias; enjuágalo solo con agua del acuario—, meter peces antes de completar el ciclado y cambiar varias cosas a la vez ante un problema. Un plantado premia la paciencia: un ajuste cada vez y una semana de observación antes del siguiente.</p>
+    <h2>Errores que arruinan el primer mes</h2>
+    <p>La mayoría de los plantados que fracasan lo hacen por los mismos motivos, todos evitables. El primero es empezar con demasiada luz y demasiadas horas, que dispara las algas antes de que las plantas arranquen. El segundo es plantar poco el primer día, dejando nutrientes libres para las algas. El tercero es abonar en exceso "por si acaso": con sustrato nutritivo nuevo, más abono no acelera nada y alimenta las algas.</p>
+    <p>Otros clásicos: lavar el material filtrante con agua del grifo —el cloro mata las bacterias—, meter peces antes de completar el ciclado y cambiar varias cosas a la vez ante un problema. Un plantado premia la paciencia: un ajuste cada vez y una semana de observación antes del siguiente.</p>
 
-<h2>Preguntas frecuentes</h2>
-<h3>¿El sustrato nutritivo es obligatorio para un acuario plantado?</h3>
-<p>No es obligatorio, pero facilita mucho el arranque. Con sustrato inerte también se puede mantener un plantado sano, siempre que se abone la columna de agua de forma constante con fertilizantes líquidos. El sustrato nutritivo perdona mejor los descuidos de abonado durante los primeros meses, a cambio de liberar amonio al inicio y agotarse con el tiempo.</p>
-<h3>¿Cuántas horas de luz necesita un plantado al principio?</h3>
-<p>Entre 6 y 8 horas diarias, con temporizador y horario fijo. Es preferible empezar corto y subir de forma gradual hasta 8 o 10 horas cuando las plantas muestren crecimiento nuevo y sostenido. Aumentar la luz no soluciona unas plantas estancadas: si no crecen, el problema suele estar en los nutrientes o el CO2.</p>
-<h3>¿Por qué me salen algas en el primer mes?</h3>
-<p>Porque es la fase más inestable: hay luz y nutrientes libres mientras las plantas aún no han establecido su ritmo de consumo. Las diatomeas marrones de las primeras semanas son normales y suelen remitir solas. La respuesta correcta es plantar denso desde el día uno, mantener el fotoperiodo corto y hacer cambios de agua frecuentes, no recurrir a alguicidas como primera medida.</p>
-<h3>¿Se puede tener un acuario plantado sin CO2?</h3>
-<p>Sí, es el enfoque low-tech: plantas poco exigentes como Anubias, Cryptocoryne, Vallisneria o helechos crecen bien sin CO2 añadido, con luz moderada y abonado suave. El crecimiento será más lento y algunas especies exigentes —tapizantes delicadas, tallos muy rojos— quedarán fuera, pero el mantenimiento es más sencillo y el sistema perdona más errores.</p>
+    <h2>Preguntas del primer mes</h2>
+    <h3>¿Cuándo puedo meter los primeros peces?</h3>
+    <p>Cuando el ciclado esté completo: amonio y nitrito en cero 24 horas después de dosificar 2 ppm de amonio. Suele ser entre la cuarta y la octava semana. Meterlos antes expone a los peces a picos tóxicos y alarga el ciclado.</p>
+    <h3>¿Las diatomeas marrones son peligrosas?</h3>
+    <p>No. Son normales en las primeras semanas y suelen remitir solas cuando el sistema madura. Se retiran con cambios de agua frecuentes y plantas de crecimiento rápido, no con alguicidas.</p>
+    <h3>¿Cuándo empiezo a abonar en serio?</h3>
+    <p>Con sustrato nutritivo nuevo, espera a ver crecimiento activo —hacia la tercera o cuarta semana— y empieza suave. Abonar desde el día uno, con nutrientes libres y plantas sin raíces, alimenta sobre todo a las algas.</p>
+    <h3>¿Puedo añadir más plantas después de la primera semana?</h3>
+    <p>Sí, y es recomendable si el plantado quedó poco denso: cada planta nueva es competencia extra contra las algas. Planta en los huecos sin remover el sustrato más de lo necesario.</p>
+    <h3>¿El sustrato nutritivo se agota?</h3>
+    <p>Sí, su carga de nutrientes se agota en uno o dos años según la marca y la densidad de plantas. Cuando eso pasa, el abonado líquido y las pastillas de abono para las raíces toman el relevo; no hace falta desmontar el acuario.</p>
 
-
-    <aside class="author-box">
+<aside class="author-box">
       <p><strong>Equipo AquaPez</strong></p>
       <p>Somos aficionados a la acuariofilia que investigamos y verificamos cada guía para compartir lo que realmente funciona, sin tecnicismos innecesarios.</p>
     </aside>
